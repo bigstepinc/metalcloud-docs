@@ -1,12 +1,20 @@
 # Introduction
 
-The Bigstep Metalcloud is an IaaS service focused on offering low latency and high performance compute and storage services. The service offers the same level of flexibility that is typical from a cloud provider but using only bare metal.
+The Bigstep Metalcloud is an IaaS service focused on offering low latency and high performance compute and storage services. The service offers the same level of flexibility that is typical from a cloud provider but using only bare metal:
+
+* Instant Provisioning
+* Stop-and-resume
+* Upgrades and downgrades
+* Quick hardware change
+* Variable storage size
 
 ## Important concepts
 
-Users typically "draw" their infrastructures using our editor. A typical design would look similar to this:
+A typical user infrastructre architecture would look similar to this:
 
 ![Infrastructure editor](/assets/general/introduction-7.png)
+
+This is a screenshot from our UI but the infrastructure could be created using the CLI, the Terraform provider, programatically via the SDKs etc.
 
 A user would create one or more **Instance Arrays** in an **infrastructure** and connect them with one or more **Networks**.
 
