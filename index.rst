@@ -10,5 +10,17 @@ Welcome to Metalcloud's documentation!
    :maxdepth: 2
    :caption: Contents:
 
-  general/introduction
+   general/introduction
+
+
+Additional resources
+--------------------
+
+
+- `Terraform Provider <https://www.terraform.io/docs/providers/metalcloud/index.html>`_
+- `CLI <https://github.com/bigstepinc/metalcloud-cli>`_
+- `GO SDK <https://github.com/bigstepinc/metal-cloud-sdk-go>`_
+- `User API Documentation <https://api.poc.metalcloud.io/metal-cloud>`_
+- `Extended API Documentation <https://api.poc.metalcloud.io/api/developer/developer>`_
+- `Additional SDKs <https://api.poc.metalcloud.io/metal-cloud#api-clients>`_
 
