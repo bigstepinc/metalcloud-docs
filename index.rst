@@ -11,7 +11,8 @@ Welcome to Metalcloud's documentation!
    :caption: Contents:
 
    general/introduction
-
+   guides/using_the_cli
+   guides/using_the_terraform_provider
 
 Additional resources
 --------------------
