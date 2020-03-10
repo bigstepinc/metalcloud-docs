@@ -24,7 +24,7 @@ An InstanceArray can be connected to a DriveArray which in turn groups Drives. E
 
 The separation betwen storage and compute enables **Instance Arrays** to be suspended and then resumed later, hardware can be changed with a reboot etc.
 
-![logical-to-physical](/assets/general/introduction-5.svg)
+![](/assets/general/introduction-5.svg)
 
 ## Infrastructures
 
@@ -35,15 +35,15 @@ The separation betwen storage and compute enables **Instance Arrays** to be susp
 *Instances* are logical-level concepts. Behind each Instance there is a **Server** but which particular one is of no importance to the user. The server can be swapped with another while the Instance's properties such as access credentials, DNS records etc are preserved.
 
 
-![logical-to-physical](/assets/general/introduction-2.svg)
+![](/assets/general/introduction-2.svg)
 
 The mapping between an instance and a server is done at "provisioning" time and is created when the user "requests" a compute resource. An instance can be mapped to another server if the user needs more resources or needs a replacement.
 
-![logical-to-physical](/assets/general/introduction-3.svg)
+![](/assets/general/introduction-3.svg)
 
 Instances have associated "Drives" and "Networks". Drives can be moved across storages and Networks typically span multiple switches. 
 
-![logical-to-physical](/assets/general/introduction-4.svg)
+![](/assets/general/introduction-4.svg)
 
 Instances can be "stopped" which will release the server to the pool but will keep all other configurations such as server type, network, OS, firewall configurations etc.
 
