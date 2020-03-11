@@ -36,7 +36,8 @@ The separation betwen storage and compute enables **Instance Arrays** to be susp
 
 ## Infrastructures
 
- An infrastructure is mode than a collection of Instances and Drives. It also instructs our systems to segregate everything from a security perspective. For example Layer 2 broadcast domains (Networks) cannot span infrastructures.
+ An infrastructure is a collection of Instances and Drives in a datacenter (availability region). From a security perspective infrastructures are equivalent to an AWS VPC.
+ 
 
 ## Servers and Instances
 

@@ -13,6 +13,16 @@ The Bigstep Metalcloud is an IaaS service focused on offering low latency and hi
    :caption: Contents:
 
    general/introduction
+   general/getting_started
+   general/additional_resources
+
+.. toctree::
+   :maxdepth: 2
+   :caption: Guides:
+   
+
+   guides/creating_an_infrastructure
+   guides/creating_an_instance_array
    guides/using_the_cli
    guides/using_the_terraform_provider
 
@@ -26,8 +36,6 @@ The Bigstep Metalcloud is an IaaS service focused on offering low latency and hi
 
 Additional resources
 --------------------
-
-
 - `Terraform Provider <https://www.terraform.io/docs/providers/metalcloud/index.html>`_
 - `CLI <https://github.com/bigstepinc/metalcloud-cli>`_
 - `GO SDK <https://github.com/bigstepinc/metal-cloud-sdk-go>`_
