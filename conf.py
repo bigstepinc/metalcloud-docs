@@ -177,7 +177,7 @@ epub_exclude_files = ['search.html']
 
 
 # -- Extension configuration -------------------------------------------------
-html_logo = "assets/bigsteplogo.png"
-logo_only= True
+#html_logo = "assets/bigsteplogo.png"
+#logo_only= True
 #html_favicon = "assets/favicon.png"
 
