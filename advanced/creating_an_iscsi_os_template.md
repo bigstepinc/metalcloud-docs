@@ -66,7 +66,10 @@ Drive Array #47799 attached to instance array 37135 has the following drives:
 Total: 1 Drives
 ```
 
-8. Create a template from the first drive
+
+## Creating a a volume template from the golden drive
+
+1. Create a template from the first drive
 
 ```bash
 $ metalcloud-cli create vt -id 74270 -boot_methods_supported pxe_iscsi -boot_type hybrid -label "centos7.1-custom" -description "Custom 7.1 template" -name "Custom Centos 7.1"
@@ -91,7 +94,7 @@ Notes on server boot methods:
 * -boot_methods_supported reffers to the type of mechanism emplyed to boot this template. For iSCSi drives use `pxe_iscsi`.
 * -boot_type reffers to the boot process of the server which can be either legacy BIOS or EFI. Hybrid reffers to templates that support both mechanisms.
 
-9. Check that the volume template has been created
+2. Check that the volume template has been created
 
 ```bash
 $ metalcloud-cli ls volume_templates
