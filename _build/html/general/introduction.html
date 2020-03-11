@@ -1,0 +1,158 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Introduction &#8212; Metalcloud  documentation</title>
+    <link rel="stylesheet" href="../_static/classic.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="../_static/language_data.js"></script>
+    
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Using the CLI" href="../guides/using_the_cli.html" />
+    <link rel="prev" title="Welcome to Metalcloud’s documentation!" href="../index.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../guides/using_the_cli.html" title="Using the CLI"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="../index.html" title="Welcome to Metalcloud’s documentation!"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">Metalcloud  documentation</a> &#187;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="introduction">
+<h1>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h1>
+<p>The Bigstep Metalcloud is an IaaS service focused on offering low latency and high performance compute and storage services. The service offers the same level of flexibility that is typical from a cloud provider but using only bare metal:</p>
+<ul class="simple">
+<li>Instant Provisioning</li>
+<li>Stop-and-resume</li>
+<li>Upgrades and downgrades</li>
+<li>Quick hardware change</li>
+<li>Variable storage size</li>
+</ul>
+<div class="section" id="important-concepts">
+<h2>Important concepts<a class="headerlink" href="#important-concepts" title="Permalink to this headline">¶</a></h2>
+<p>A typical user infrastructre architecture would look similar to this:</p>
+<p><img alt="Infrastructure editor" src="../_images/introduction-7.png" /></p>
+<p>This is a screenshot from our UI but the infrastructure could be created using the CLI, the Terraform provider, programatically via the SDKs etc.</p>
+<p>A user would create one or more <strong>Instance Arrays</strong> in an <strong>infrastructure</strong> and connect them with one or more <strong>Networks</strong>.</p>
+<ul class="simple">
+<li>An <strong>infrastructure</strong> groups servers, storages, IPs etc that are needed for a particular “project”.</li>
+<li>An <strong>InstanceArray</strong> is a cluster of similar servers groupped together.</li>
+<li>A <strong>Network</strong> is a dedicated <strong>Layer 2</strong> broadcast domain</li>
+</ul>
+</div>
+<div class="section" id="instance-arrays-and-drive-arrays">
+<h2>Instance Arrays and Drive Arrays<a class="headerlink" href="#instance-arrays-and-drive-arrays" title="Permalink to this headline">¶</a></h2>
+<p>Multiple <strong>Instances</strong> are grouped together in <strong>Instance Arrays</strong>. An Instance Array can be “resized” which means the same “InstanceArray-wide” settings will apply to the new instances. This is helpful for managing application clusters.</p>
+<p>An InstanceArray can be connected to a DriveArray which in turn groups Drives. Each Instance will get an associated Drive.</p>
+<p>The separation betwen storage and compute enables <strong>Instance Arrays</strong> to be suspended and then resumed later, hardware can be changed with a reboot etc.</p>
+<p><img alt="../_images/introduction-5.svg" src="../_images/introduction-5.svg" /></p>
+</div>
+<div class="section" id="infrastructures">
+<h2>Infrastructures<a class="headerlink" href="#infrastructures" title="Permalink to this headline">¶</a></h2>
+<p>An infrastructure is mode than a collection of Instances and Drives. It also instructs our systems to segregate everything from a security perspective. For example Layer 2 broadcast domains (Networks) cannot span infrastructures.</p>
+</div>
+<div class="section" id="servers-and-instances">
+<h2>Servers and Instances<a class="headerlink" href="#servers-and-instances" title="Permalink to this headline">¶</a></h2>
+<p><em>Instances</em> are logical-level concepts. Behind each Instance there is a <strong>Server</strong> but which particular one is of no importance to the user. The server can be swapped with another while the Instance’s properties such as access credentials, DNS records etc are preserved.</p>
+<p><img alt="../_images/introduction-2.svg" src="../_images/introduction-2.svg" /></p>
+<p>The mapping between an instance and a server is done at “provisioning” time and is created when the user “requests” a compute resource. An instance can be mapped to another server if the user needs more resources or needs a replacement.</p>
+<p><img alt="../_images/introduction-3.svg" src="../_images/introduction-3.svg" /></p>
+<p>Instances have associated “Drives” and “Networks”. Drives can be moved across storages and Networks typically span multiple switches.</p>
+<p><img alt="../_images/introduction-4.svg" src="../_images/introduction-4.svg" /></p>
+<p>Instances can be “stopped” which will release the server to the pool but will keep all other configurations such as server type, network, OS, firewall configurations etc.</p>
+<blockquote>
+<div>The Metalcloud supports installing the OS on a local drive. When releasing the server associated with an instance the content of all local drives will be wiped.</div></blockquote>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="../index.html">Table of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Introduction</a><ul>
+<li><a class="reference internal" href="#important-concepts">Important concepts</a></li>
+<li><a class="reference internal" href="#instance-arrays-and-drive-arrays">Instance Arrays and Drive Arrays</a></li>
+<li><a class="reference internal" href="#infrastructures">Infrastructures</a></li>
+<li><a class="reference internal" href="#servers-and-instances">Servers and Instances</a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="../index.html"
+                        title="previous chapter">Welcome to Metalcloud’s documentation!</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="../guides/using_the_cli.html"
+                        title="next chapter">Using the CLI</a></p>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../_sources/general/introduction.md.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    </div>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../guides/using_the_cli.html" title="Using the CLI"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="../index.html" title="Welcome to Metalcloud’s documentation!"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">Metalcloud  documentation</a> &#187;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2020, Alex Bordei.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.8.5.
+    </div>
+  </body>
+</html>

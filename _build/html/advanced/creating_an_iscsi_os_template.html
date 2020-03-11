@@ -1,0 +1,207 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Creating an iscsi OS template &#8212; Metalcloud  documentation</title>
+    <link rel="stylesheet" href="../_static/classic.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="../_static/language_data.js"></script>
+    
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="nav-item nav-item-0"><a href="../index.html">Metalcloud  documentation</a> &#187;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="creating-an-iscsi-os-template">
+<h1>Creating an iscsi OS template<a class="headerlink" href="#creating-an-iscsi-os-template" title="Permalink to this headline">¶</a></h1>
+<p>Custom iSCSI templates allow users to build their own images.</p>
+<p>Typically a user would start from a standard Metalcloud template and modify it.</p>
+<p>This tutorial uses the CLI. Visit <a class="reference internal" href="../guides/using_the_cli.html"><span class="doc">using the CLI</span></a> for more details.</p>
+<div class="section" id="creating-a-golden-drive">
+<h2>Creating a “golden” drive<a class="headerlink" href="#creating-a-golden-drive" title="Permalink to this headline">¶</a></h2>
+<ol class="simple">
+<li>List available templates</li>
+</ol>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ metalcloud-cli ls volume_templates
+Volume templates I have access to as user alex.d@d.com:
++-------+-----------------------------------------+----------------------------------+-------+---------------------------+-----------+
+<span class="p">|</span> ID    <span class="p">|</span> LABEL                                   <span class="p">|</span> NAME                             <span class="p">|</span> SIZE  <span class="p">|</span> STATUS                    <span class="p">|</span> FLAGS     <span class="p">|</span>
++-------+-----------------------------------------+----------------------------------+-------+---------------------------+-----------+
+<span class="p">|</span> <span class="m">6</span>     <span class="p">|</span> ubuntu-12-04                            <span class="p">|</span> Ubuntu-12.04                     <span class="p">|</span> <span class="m">40960</span> <span class="p">|</span> deprecated_deny_provision <span class="p">|</span>           <span class="p">|</span>
+<span class="p">|</span> <span class="m">13</span>    <span class="p">|</span> centos6-5                               <span class="p">|</span> CentOS6.5                        <span class="p">|</span> <span class="m">40960</span> <span class="p">|</span> deprecated_allow_expand   <span class="p">|</span>           <span class="p">|</span>
+<span class="p">|</span> <span class="m">14</span>    <span class="p">|</span> centos6-6                               <span class="p">|</span> CentOS6.6                        <span class="p">|</span> <span class="m">41000</span> <span class="p">|</span> deprecated_allow_expand   <span class="p">|</span>           <span class="p">|</span>
+<span class="p">|</span> <span class="m">18</span>    <span class="p">|</span> centos71v1                              <span class="p">|</span> CentOS <span class="m">7</span>.1                       <span class="p">|</span> <span class="m">40960</span> <span class="p">|</span> deprecated_allow_expand   <span class="p">|</span>           <span class="p">|</span>
++-------+-----------------------------------------+----------------------------------+-------+---------------------------+-----------+
+Total: <span class="m">4</span> Volume templates
+</pre></div>
+</div>
+<ol class="simple">
+<li>Provision an Instance</li>
+</ol>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ metalcloud-cli create instance_array -boot pxe_iscsi -firewall_management_disabled -infra demo -instance_count <span class="m">1</span> -label gold
+</pre></div>
+</div>
+<ol class="simple">
+<li>Add a drive array to the instance</li>
+</ol>
+<p>Use the ID of the template, for instance <strong>18</strong> for CentOS 7.1</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ metalcloud-cli create da -ia gold -infra demo -size <span class="m">100000</span> -label gold-da -template <span class="m">18</span>
+</pre></div>
+</div>
+<ol class="simple">
+<li>Deploy the infrastructure</li>
+</ol>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ metalcloud-cli deploy infra -id demo
+</pre></div>
+</div>
+<ol class="simple">
+<li>Login or connect to the server and perform required modifications, test etc.</li>
+</ol>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ metalcloud-cli show ia -id gold -show_credentials
+</pre></div>
+</div>
+<ol class="simple">
+<li>Shutdown the server to avoid in-flight data from not being serialized</li>
+</ol>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$  metalcloud-cli power_control instance -id <span class="m">58413</span> -operation soft
+</pre></div>
+</div>
+<ol class="simple">
+<li>List the drives of the <strong>gold-da</strong> drive array</li>
+</ol>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ metalcloud-cli show da -id gold-da
+Drive Array <span class="c1">#47799 attached to instance array 37135 has the following drives:</span>
++-------+-------------------------------+-----------+-----------+-----------+-------------------------------+--------------------------+--------------------------+
+<span class="p">|</span> ID    <span class="p">|</span> LABEL                         <span class="p">|</span> STATUS    <span class="p">|</span> SIZE <span class="o">(</span>MB<span class="o">)</span> <span class="p">|</span> TYPE      <span class="p">|</span> ATTACHED TO                   <span class="p">|</span> TEMPLATE                 <span class="p">|</span> DETAILS                  <span class="p">|</span>
++-------+-------------------------------+-----------+-----------+-----------+-------------------------------+--------------------------+--------------------------+
+<span class="p">|</span> <span class="m">74270</span> <span class="p">|</span> drive-74270                   <span class="p">|</span> active   <span class="p">|</span> <span class="m">100000</span>    <span class="p">|</span> iscsi_ssd <span class="p">|</span> instance-58413                <span class="p">|</span>                          <span class="p">|</span> none  none               <span class="p">|</span>
++-------+-------------------------------+-----------+-----------+-----------+-------------------------------+--------------------------+--------------------------+
+Total: <span class="m">1</span> Drives
+</pre></div>
+</div>
+<ol class="simple">
+<li>Create a template from the first drive</li>
+</ol>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ metalcloud-cli create vt -id <span class="m">74270</span> -boot_methods_supported pxe_iscsi -boot_type hybrid -label <span class="s2">&quot;centos7.1-custom&quot;</span> -description <span class="s2">&quot;Custom 7.1 template&quot;</span> -name <span class="s2">&quot;Custom Centos 7.1&quot;</span>
+</pre></div>
+</div>
+<p>The “create volume_template” operation takes the following arguments:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>alex@Alexandrus-MacBook-Pro metalcloud-docs $ metalcloud-cli create vt -h
+Command: create volume_templates   Create volume templates <span class="o">(</span>alternatively use <span class="s2">&quot;new vt&quot;</span><span class="o">)</span>
+	  -boot_methods_supported    The boot_methods_supported of the volume template. Defaults to <span class="s1">&#39;pxe_iscsi&#39;</span>.
+	  -boot_type                 <span class="o">(</span>Required<span class="o">)</span> The boot_type of the volume template. Possible values: <span class="s1">&#39;uefi_only&#39;</span>,<span class="s1">&#39;legacy_only&#39;</span>,<span class="s1">&#39;hybrid&#39;</span> 
+	  -deprecated                <span class="o">(</span>Flag<span class="o">)</span> <span class="nb">set</span> to <span class="nb">true</span> <span class="k">if</span> this template is deprecated
+	  -description               <span class="o">(</span>Required<span class="o">)</span> The description of the volume template
+	  -id                        <span class="o">(</span>Required<span class="o">)</span> The id of the drive to create the volume template from
+	  -label                     <span class="o">(</span>Required<span class="o">)</span> The label of the volume template
+	  -name                      <span class="o">(</span>Required<span class="o">)</span> The display name of the volume template
+	  -return_id                 <span class="o">(</span>Optional<span class="o">)</span> Will print the ID of the created Drive Array. Useful <span class="k">for</span> automating tasks.
+	  -tags                      The tags of the volume template, comma separated.
+	  -h                         Show <span class="nb">command</span> <span class="nb">help</span> and exit.
+</pre></div>
+</div>
+<p>Notes on server boot methods:</p>
+<ul class="simple">
+<li>-boot_methods_supported reffers to the type of mechanism emplyed to boot this template. For iSCSi drives use <code class="docutils literal notranslate"><span class="pre">pxe_iscsi</span></code>.</li>
+<li>-boot_type reffers to the boot process of the server which can be either legacy BIOS or EFI. Hybrid reffers to templates that support both mechanisms.</li>
+</ul>
+<ol class="simple">
+<li>Check that the volume template has been created</li>
+</ol>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ metalcloud-cli ls volume_templates
+Volume templates I have access to as user alex.d@d.com:
++-------+-----------------------------------------+----------------------------------+-------+---------------------------+-----------+
+<span class="p">|</span> ID    <span class="p">|</span> LABEL                                   <span class="p">|</span> NAME                             <span class="p">|</span> SIZE  <span class="p">|</span> STATUS                    <span class="p">|</span> FLAGS     <span class="p">|</span>
++-------+-----------------------------------------+----------------------------------+-------+---------------------------+-----------+
+<span class="p">|</span> <span class="m">6</span>     <span class="p">|</span> ubuntu-12-04                            <span class="p">|</span> Ubuntu-12.04                     <span class="p">|</span> <span class="m">40960</span> <span class="p">|</span> deprecated_deny_provision <span class="p">|</span>           <span class="p">|</span>
+<span class="p">|</span> <span class="m">13</span>    <span class="p">|</span> centos6-5                               <span class="p">|</span> CentOS6.5                        <span class="p">|</span> <span class="m">40960</span> <span class="p">|</span> deprecated_allow_expand   <span class="p">|</span>           <span class="p">|</span>
+<span class="p">|</span> <span class="m">14</span>    <span class="p">|</span> centos6-6                               <span class="p">|</span> CentOS6.6                        <span class="p">|</span> <span class="m">41000</span> <span class="p">|</span> deprecated_allow_expand   <span class="p">|</span>           <span class="p">|</span>
+<span class="p">|</span> <span class="m">18</span>    <span class="p">|</span> centos71v1                              <span class="p">|</span> CentOS <span class="m">7</span>.1                       <span class="p">|</span> <span class="m">40960</span> <span class="p">|</span> deprecated_allow_expand   <span class="p">|</span>           <span class="p">|</span>
+<span class="p">|</span> <span class="m">19</span>    <span class="p">|</span> centos71-custom                         <span class="p">|</span> CustomCentOS <span class="m">7</span>.1                 <span class="p">|</span> <span class="m">40960</span> <span class="p">|</span> deprecated_allow_expand   <span class="p">|</span>           <span class="p">|</span>
++-------+-----------------------------------------+----------------------------------+-------+---------------------------+-----------+
+Total: <span class="m">5</span> Volume templates
+</pre></div>
+</div>
+<blockquote>
+<div>Please note that the volume template is a private template meaning only it’s owner has access to it.</div></blockquote>
+<p>Now the template can be used as any other template.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ metalcloud-cli create da -ia gold -infra demo -size <span class="m">100000</span> -label gold-da -template <span class="m">19</span>
+</pre></div>
+</div>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="../index.html">Table of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Creating an iscsi OS template</a><ul>
+<li><a class="reference internal" href="#creating-a-golden-drive">Creating a “golden” drive</a></li>
+</ul>
+</li>
+</ul>
+
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../_sources/advanced/creating_an_iscsi_os_template.md.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    </div>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="nav-item nav-item-0"><a href="../index.html">Metalcloud  documentation</a> &#187;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2020, Alex Bordei.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.8.5.
+    </div>
+  </body>
+</html>

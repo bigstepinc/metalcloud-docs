@@ -1,0 +1,238 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Using the Terraform provider &#8212; Metalcloud  documentation</title>
+    <link rel="stylesheet" href="../_static/classic.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="../_static/language_data.js"></script>
+    
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="prev" title="Using the CLI" href="using_the_cli.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="using_the_cli.html" title="Using the CLI"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">Metalcloud  documentation</a> &#187;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="using-the-terraform-provider">
+<h1>Using the Terraform provider<a class="headerlink" href="#using-the-terraform-provider" title="Permalink to this headline">¶</a></h1>
+<p>This is a terraform plugin for controlling Bigstep Metalcloud resources.</p>
+<div class="section" id="terraform-provider-requirements">
+<h2>Terraform provider requirements<a class="headerlink" href="#terraform-provider-requirements" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><a class="reference external" href="https://www.terraform.io/downloads.html">Terraform</a> 0.12.x</li>
+</ul>
+</div>
+<div class="section" id="using-the-provider">
+<h2>Using the Provider<a class="headerlink" href="#using-the-provider" title="Permalink to this headline">¶</a></h2>
+<p>A terraform <code class="docutils literal notranslate"><span class="pre">main.tf</span></code> template file, for an infrastructure with a single server would look something like this:</p>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="nx">provider</span> <span class="s2">&quot;metalcloud&quot;</span> <span class="p">{</span>
+   <span class="nx">user_email</span> <span class="o">=</span> <span class="kd">var</span><span class="p">.</span><span class="nx">user_email</span>
+   <span class="nx">api_key</span> <span class="o">=</span> <span class="kd">var</span><span class="p">.</span><span class="nx">api_key</span> 
+   <span class="nx">endpoint</span> <span class="o">=</span> <span class="kd">var</span><span class="p">.</span><span class="nx">endpoint</span>
+<span class="p">}</span>
+
+<span class="nx">data</span> <span class="s2">&quot;metalcloud_volume_template&quot;</span> <span class="s2">&quot;centos76&quot;</span> <span class="p">{</span>
+  <span class="nx">volume_template_label</span> <span class="o">=</span> <span class="s2">&quot;centos7-6&quot;</span>
+<span class="p">}</span>
+
+<span class="nx">resource</span> <span class="s2">&quot;metalcloud_infrastructure&quot;</span> <span class="s2">&quot;my-infra216&quot;</span> <span class="p">{</span>
+  
+  <span class="nx">infrastructure_label</span> <span class="o">=</span> <span class="s2">&quot;my-terraform-infra216&quot;</span>
+  <span class="nx">datacenter_name</span> <span class="o">=</span> <span class="kd">var</span><span class="p">.</span><span class="nx">datacenter</span>
+  
+  <span class="nx">prevent_deploy</span> <span class="o">=</span> <span class="kc">true</span>
+
+  <span class="nx">network</span><span class="p">{</span>
+    <span class="nx">network_type</span> <span class="o">=</span> <span class="s2">&quot;san&quot;</span>
+    <span class="nx">network_label</span> <span class="o">=</span> <span class="s2">&quot;san&quot;</span>
+  <span class="p">}</span>
+
+  <span class="nx">network</span><span class="p">{</span>
+    <span class="nx">network_type</span> <span class="o">=</span> <span class="s2">&quot;wan&quot;</span>
+    <span class="nx">network_label</span> <span class="o">=</span> <span class="s2">&quot;internet&quot;</span>
+  <span class="p">}</span>
+
+  <span class="nx">network</span><span class="p">{</span>
+    <span class="nx">network_type</span> <span class="o">=</span> <span class="s2">&quot;lan&quot;</span>
+    <span class="nx">network_label</span> <span class="o">=</span> <span class="s2">&quot;private&quot;</span>
+  <span class="p">}</span>
+
+
+  <span class="nx">instance_array</span> <span class="p">{</span>
+    <span class="nx">instance_array_label</span> <span class="o">=</span> <span class="s2">&quot;exmaple-master&quot;</span>
+    <span class="nx">instance_array_instance_count</span> <span class="o">=</span> <span class="mi">2</span>
+    <span class="nx">instance_array_ram_gbytes</span> <span class="o">=</span> <span class="mi">8</span>
+    <span class="nx">instance_array_processor_count</span> <span class="o">=</span> <span class="mi">1</span>
+    <span class="nx">instance_array_processor_core_count</span> <span class="o">=</span> <span class="mi">8</span>
+
+    <span class="kr">interface</span><span class="p">{</span>
+        <span class="nx">interface_index</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="nx">network_label</span> <span class="o">=</span> <span class="s2">&quot;san&quot;</span>
+    <span class="p">}</span>
+
+    <span class="kr">interface</span><span class="p">{</span>
+        <span class="nx">interface_index</span> <span class="o">=</span> <span class="mi">1</span>
+        <span class="nx">network_label</span> <span class="o">=</span> <span class="s2">&quot;internet&quot;</span>
+    <span class="p">}</span>
+
+    <span class="kr">interface</span><span class="p">{</span>
+        <span class="nx">interface_index</span> <span class="o">=</span> <span class="mi">2</span>
+        <span class="nx">network_label</span> <span class="o">=</span> <span class="s2">&quot;private&quot;</span>
+    <span class="p">}</span>
+    
+    <span class="nx">drive_array</span><span class="p">{</span>
+      <span class="nx">drive_array_label</span> <span class="o">=</span> <span class="s2">&quot;example-master-os-drive&quot;</span>
+      <span class="nx">drive_array_storage_type</span> <span class="o">=</span> <span class="s2">&quot;iscsi_hdd&quot;</span>
+      <span class="nx">drive_size_mbytes_default</span> <span class="o">=</span> <span class="mi">49000</span>
+      <span class="nx">volume_template_id</span> <span class="o">=</span> <span class="nx">tonumber</span><span class="p">(</span><span class="nx">data</span><span class="p">.</span><span class="nx">metalcloud_volume_template</span><span class="p">.</span><span class="nx">centos76</span><span class="p">.</span><span class="nx">id</span><span class="p">)</span>
+    <span class="p">}</span>
+
+    <span class="nx">firewall_rule</span> <span class="p">{</span>
+      <span class="nx">firewall_rule_description</span> <span class="o">=</span> <span class="s2">&quot;test fw rule&quot;</span>
+      <span class="nx">firewall_rule_port_range_start</span> <span class="o">=</span> <span class="mi">22</span>
+      <span class="nx">firewall_rule_port_range_end</span> <span class="o">=</span> <span class="mi">22</span>
+      <span class="nx">firewall_rule_source_ip_address_range_start</span><span class="o">=</span><span class="s2">&quot;0.0.0.0&quot;</span>
+      <span class="nx">firewall_rule_source_ip_address_range_end</span><span class="o">=</span><span class="s2">&quot;0.0.0.0&quot;</span>
+      <span class="nx">firewall_rule_protocol</span><span class="o">=</span><span class="s2">&quot;tcp&quot;</span>
+      <span class="nx">firewall_rule_ip_address_type</span><span class="o">=</span><span class="s2">&quot;ipv4&quot;</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+
+  <span class="nx">instance_array</span> <span class="p">{</span>
+    <span class="nx">instance_array_label</span> <span class="o">=</span> <span class="s2">&quot;example-slave&quot;</span>  
+    <span class="nx">instance_array_instance_count</span> <span class="o">=</span> <span class="mi">1</span>
+    <span class="nx">instance_array_ram_gbytes</span> <span class="o">=</span> <span class="mi">8</span>
+    <span class="nx">instance_array_processor_count</span> <span class="o">=</span> <span class="mi">1</span>
+    <span class="nx">instance_array_processor_core_count</span> <span class="o">=</span> <span class="mi">8</span>
+
+    <span class="nx">drive_array</span><span class="p">{</span>
+      <span class="nx">drive_array_label</span> <span class="o">=</span> <span class="s2">&quot;example-slave-os-drive&quot;</span>
+      <span class="nx">drive_array_storage_type</span> <span class="o">=</span> <span class="s2">&quot;iscsi_hdd&quot;</span>
+      <span class="nx">drive_size_mbytes_default</span> <span class="o">=</span> <span class="mi">49000</span>
+      <span class="nx">volume_template_id</span> <span class="o">=</span> <span class="nx">tonumber</span><span class="p">(</span><span class="nx">data</span><span class="p">.</span><span class="nx">metalcloud_volume_template</span><span class="p">.</span><span class="nx">centos76</span><span class="p">.</span><span class="nx">id</span><span class="p">)</span>
+    <span class="p">}</span>
+
+    <span class="nx">firewall_rule</span> <span class="p">{</span>
+      <span class="nx">firewall_rule_description</span> <span class="o">=</span> <span class="s2">&quot;test fw rule&quot;</span>
+      <span class="nx">firewall_rule_port_range_start</span> <span class="o">=</span> <span class="mi">22</span>
+      <span class="nx">firewall_rule_port_range_end</span> <span class="o">=</span> <span class="mi">22</span>
+      <span class="nx">firewall_rule_source_ip_address_range_start</span><span class="o">=</span><span class="s2">&quot;0.0.0.0&quot;</span>
+      <span class="nx">firewall_rule_source_ip_address_range_end</span><span class="o">=</span><span class="s2">&quot;0.0.0.0&quot;</span>
+      <span class="nx">firewall_rule_protocol</span><span class="o">=</span><span class="s2">&quot;tcp&quot;</span>
+      <span class="nx">firewall_rule_ip_address_type</span><span class="o">=</span><span class="s2">&quot;ipv4&quot;</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Initialize the provider with your API key and the api endpoint either by using environment variables or -var.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">export</span> <span class="nv">TF_VAR_api_key</span><span class="o">=</span><span class="s2">&quot;&lt;yourkey&gt;&quot;</span>
+<span class="nb">export</span> <span class="nv">TF_VAR_user</span><span class="o">=</span><span class="s2">&quot;test@test.com&quot;</span>
+<span class="nb">export</span> <span class="nv">TF_VAR_endpoint</span><span class="o">=</span><span class="s2">&quot;https://api.bigstep.com/metal-cloud&quot;</span>
+<span class="nb">export</span> <span class="nv">TF_VAR_datacenter</span><span class="o">=</span><span class="s2">&quot;uk-reading&quot;</span>
+</pre></div>
+</div>
+<p>Initialize the provider:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>terraform init
+</pre></div>
+</div>
+<p>To deploy this infrastructure export the following variables (or use -var):</p>
+<p>The plan phase:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>terraform plan
+</pre></div>
+</div>
+<p>The apply phase:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>terraform apply
+</pre></div>
+</div>
+<p>To delete the infrastrucure:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>terraform destroy
+</pre></div>
+</div>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="../index.html">Table of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Using the Terraform provider</a><ul>
+<li><a class="reference internal" href="#terraform-provider-requirements">Terraform provider requirements</a></li>
+<li><a class="reference internal" href="#using-the-provider">Using the Provider</a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="using_the_cli.html"
+                        title="previous chapter">Using the CLI</a></p>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../_sources/guides/using_the_terraform_provider.md.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    </div>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="using_the_cli.html" title="Using the CLI"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">Metalcloud  documentation</a> &#187;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2020, Alex Bordei.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.8.5.
+    </div>
+  </body>
+</html>
