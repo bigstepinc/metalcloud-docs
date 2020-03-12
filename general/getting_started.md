@@ -37,9 +37,21 @@ Click on the big "Deploy" button from the bottom of the screen.
 
 The deploy operation should take between 3 and 10 minutes. At the end of it the *instance array* will be in an `active` state.
 
-5. After the deploy the *instance array* is in "active" state. If you can select 
+5. After the deploy the *instance array* is in "active" state. Click on the instance array:
+
+![](/assets/guides/managing_instance_arrays1.png)
+
+This will pop-up the access credentials window:
+
+![](/assets/guides/managing_instance_arrays2.png)
+
+Here you can find, for each instance (server):
+1. the quick ssh access link
+2. root password
+
+>Note: It is recommended that you register your public SSH key in the **Account settings** section so that it gets automatically added on the hosts at deploy time.
 
 Where to go from here:
 
-1. [Creating an Infrastructure](/guides/creating_an_infrastructure)
-2. [Creating an InstanceArray](/guides/creating_an_instance_array)
+1. [Managing infrastructures](/guides/managing_infrastructures)
+2. [Managing instance arrays](/guides/managing_instance_arrays)

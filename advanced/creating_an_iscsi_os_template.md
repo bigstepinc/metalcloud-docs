@@ -4,6 +4,8 @@ Custom iSCSI templates allow users to build their own images.
 
 Typically a user would start from a standard Metalcloud template and modify it.
 
+![](/assets/advanced/creating_custom_template1.svg)
+
 This tutorial uses the CLI. Visit [using the CLI](/guides/using_the_cli) for more details.
 
 ## Creating a "golden" drive
