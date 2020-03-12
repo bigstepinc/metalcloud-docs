@@ -1,4 +1,4 @@
-# Creating an infrastructure
+# Managing infrastructures
 
 Instance Arrays are collections of identical servers used as a single entity.
 
@@ -43,6 +43,19 @@ Infrastructures I have access to (as alex.bordei@bigstep.com) in datacenter uk-r
 +-------+-------------------------------+----------------------------------+-----------+---------+--------------+
 Total: 3 Infrastructures
  ```
+
+
+## Changing an infrastructure's properties using the UI
+
+1. Access the infrastructure's properties using the **Infrastructure Properties** tab:
+
+![](/assets/guides/managing_infrastructures1.png)
+
+> Once deployed, an infrastructure's datacenter cannot be changed any more.
+
+The name of the infrastructure can be changed. This will have an effect on all long form DNS records such as instance array names in the form: `instance-58417.instance-array-37139.vanilla.my-infrastructure.8186.bigstep.io`
+
+
 
 
 Where to go from here:

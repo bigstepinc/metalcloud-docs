@@ -1,9 +1,9 @@
-# Creating an instance array
+# Managing instance arrays
 
 This is how Servers This is often the very first step in using the Metal Cloud.
 Make sure you have created an account with us by signing up [here](http://bigstep.com)
 
-### CCreating an instance array using the Infrastructure Editor
+### Deploying an instance array using the Infrastructure Editor
 
 In the MetalCloud servers (called **Instances**) are groupped in **InstanceArrays**. By default an infrastructure is created for you called "my-infrastructure" in a datacenter geographically close to you.
 
@@ -28,9 +28,33 @@ By default all traffic is blocked except if it originates from what our systems 
 
 Operations in the MetalCloud are not immediatelly deployed. In fact they can be reverted until the infrastructure is "Deployed".
 Click on the big "Deploy" button from the bottom of the screen.
+
 ![](/assets/guides/getting_started61.png)
 
-### Creating an instance array using the CLI
+### Retrieving server access credentials using the UI
+
+Once an infrastructure is active you can access the servers' access credentials by clicking on the instance array.
+
+![](/assets/guides/managing_instance_arrays1.png)
+
+This will pop-up the access credentials window:
+
+![](/assets/guides/managing_instance_arrays2.png)
+
+Here you can find, for each instance (server):
+1. the quick ssh access link
+2. root password
+
+Clicking on an instance opens up further information:
+
+The host can be any one of the:
+1. Hosts' public ip address (89..)
+2. Hosts's permanent DNS entry: `instance-58417.bigstep.io `
+3. Host's long-form DNS entry: ` instance-58417.instance-array-37139.vanilla.my-infrastructure.8186.bigstep.io`
+
+>Note: It is recommended that you register your public SSH key in the **Account settings** section so that it gets automatically added on the hosts at deploy time.
+
+### Deploying an instance array using the CLI
 
 This tutorial uses the CLI. Visit [using the CLI](/guides/using_the_cli) for more details.
 
@@ -69,7 +93,11 @@ $ metalcloud-cli create da -ia gold -infra demo -size 100000 -label gold-da -tem
 $ metalcloud-cli deploy infra -id demo
 ```
 
-5. Login or connect to the server and perform required modifications, test etc.
+### Retrieving server access credentials using the CLI
+
+
+1. To retrive your ssh credentials use the following command:
+
 ```bash
 $ metalcloud-cli show ia -id gold -show_credentials
 ```
