@@ -45,7 +45,7 @@ Copy the api key. It should be of the form <number>:<letters>
 Configure credentials as environment variables:
 ```bash
 export METALCLOUD_API_KEY="<your key>"
-export METALCLOUD_ENDPOINT="https://api.bigstep.com/metal-cloud/extended"
+export METALCLOUD_ENDPOINT="https://api.bigstep.com"
 export METALCLOUD_USER_EMAIL="<your email>"
 export METALCLOUD_DATACENTER="uk-reading"
 ```
