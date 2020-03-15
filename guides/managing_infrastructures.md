@@ -31,7 +31,7 @@ This tutorial uses the CLI. Visit [using the CLI](/guides/using_the_cli) for mor
 Check if your infrastructure has been created:
 
  ```bash
-metalcloud-cli ls infra
+metalcloud-cli infra list
 Infrastructures I have access to (as alex.bordei@bigstep.com) in datacenter uk-reading
 
 +-------+-------------------------------+----------------------------------+-----------+---------+--------------+
