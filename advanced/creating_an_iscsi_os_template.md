@@ -1,8 +1,6 @@
 # Creating an iscsi OS template
 
-Custom iSCSI templates allow users to build their own images.
-
-Typically a user would start from a standard Metalcloud template and modify it.
+Custom iSCSI templates allow users to build their own images. Typically a user would start from a standard Metalcloud template and modify it:
 
 ![](/assets/advanced/creating_custom_template1.svg)
 
@@ -13,7 +11,7 @@ This tutorial uses the CLI. Visit [using the CLI](/guides/using_the_cli) for mor
 1. List available templates
 
 ```bash
-$ metalcloud-cli ls volume_templates
+$ metalcloud-cli volume_template list
 Volume templates I have access to as user alex.d@d.com:
 +-------+-----------------------------------------+----------------------------------+-------+---------------------------+-----------+
 | ID    | LABEL                                   | NAME                             | SIZE  | STATUS                    | FLAGS     |
@@ -30,35 +28,35 @@ Total: 4 Volume templates
 
 
 ```bash
-$ metalcloud-cli create instance_array -boot pxe_iscsi -firewall_management_disabled -infra demo -instance_count 1 -label gold
+$ metalcloud-cli  instance-array create -boot pxe-iscsi -firewall-management-disabled -infra demo -instance-count 1 -label gold
 ```
 3. Add a drive array to the instance
 
 Use the ID of the template, for instance **18** for CentOS 7.1
 
 ```bash
-$ metalcloud-cli create da -ia gold -infra demo -size 100000 -label gold-da -template 18
+$ metalcloud-cli drive-array create  -ia gold -infra demo -size 100000 -label gold-da -template 18
 ```
 
 4. Deploy the infrastructure
 ```bash
-$ metalcloud-cli deploy infra -id demo
+$ metalcloud-cli infrastructure deploy -id demo
 ```
 
 5. Login or connect to the server and perform required modifications, test etc.
 ```bash
-$ metalcloud-cli show ia -id gold -show_credentials
+$ metalcloud-cli instance-array get -id gold -show-credentials
 ```
 
 6. Shutdown the server to avoid in-flight data from not being serialized
 ```bash
-$  metalcloud-cli power_control instance -id 58413 -operation soft
+$  metalcloud-cli instance power-control  -id 58413 -operation soft
 ```
 
 7. List the drives of the **gold-da** drive array
 
 ```bash
-$ metalcloud-cli show da -id gold-da
+$ metalcloud-cli drive-array get -id gold-da
 Drive Array #47799 attached to instance array 37135 has the following drives:
 +-------+-------------------------------+-----------+-----------+-----------+-------------------------------+--------------------------+--------------------------+
 | ID    | LABEL                         | STATUS    | SIZE (MB) | TYPE      | ATTACHED TO                   | TEMPLATE                 | DETAILS                  |
@@ -74,32 +72,34 @@ Total: 1 Drives
 1. Create a template from the first drive
 
 ```bash
-$ metalcloud-cli create vt -id 74270 -boot_methods_supported pxe_iscsi -boot_type hybrid -label "centos7.1-custom" -description "Custom 7.1 template" -name "Custom Centos 7.1"
+$ metalcloud-cli volume-template create  -id 74270 -boot-methods-supported pxe-iscsi -boot-type hybrid -label "centos7.1-custom" -description "Custom 7.1 template" -name "Custom Centos 7.1"
 ```
 
 The "create volume_template" operation takes the following arguments:
 ```bash
-alex@Alexandrus-MacBook-Pro metalcloud-docs $ metalcloud-cli create vt -h
-Command: create volume_templates   Create volume templates (alternatively use "new vt")
-	  -boot_methods_supported    The boot_methods_supported of the volume template. Defaults to 'pxe_iscsi'.
-	  -boot_type                 (Required) The boot_type of the volume template. Possible values: 'uefi_only','legacy_only','hybrid' 
+$ ./metalcloud-cli volume-template create -h
+Command: volume-template create    Create volume templates (alternatively use "new vt")
+	  -boot-methods-supported    The boot_methods_supported of the volume template. Defaults to 'pxe_iscsi'.
+	  -boot-type                 (Required) The boot_type of the volume template. Possible values: 'uefi_only','legacy_only','hybrid' 
 	  -deprecated                (Flag) set to true if this template is deprecated
 	  -description               (Required) The description of the volume template
 	  -id                        (Required) The id of the drive to create the volume template from
 	  -label                     (Required) The label of the volume template
 	  -name                      (Required) The display name of the volume template
-	  -return_id                 (Optional) Will print the ID of the created Drive Array. Useful for automating tasks.
+	  -return-id                 (Optional) Will print the ID of the created Drive Array. Useful for automating tasks.
 	  -tags                      The tags of the volume template, comma separated.
 	  -h                         Show command help and exit.
+
+
 ```
 Notes on server boot methods:
-* -boot_methods_supported reffers to the type of mechanism emplyed to boot this template. For iSCSi drives use `pxe_iscsi`.
-* -boot_type reffers to the boot process of the server which can be either legacy BIOS or EFI. Hybrid reffers to templates that support both mechanisms.
+* -boot-methods-supported reffers to the type of mechanism emplyed to boot this template. For iSCSi drives use `pxe_iscsi`.
+* -boot-type reffers to the boot process of the server which can be either legacy BIOS or EFI. Hybrid reffers to templates that support both mechanisms.
 
 2. Check that the volume template has been created
 
 ```bash
-$ metalcloud-cli ls volume_templates
+$ metalcloud-cli volume-template list
 Volume templates I have access to as user alex.d@d.com:
 +-------+-----------------------------------------+----------------------------------+-------+---------------------------+-----------+
 | ID    | LABEL                                   | NAME                             | SIZE  | STATUS                    | FLAGS     |
@@ -117,5 +117,5 @@ Total: 5 Volume templates
 Now the template can be used as any other template.
 
 ```bash
-$ metalcloud-cli create da -ia gold -infra demo -size 100000 -label gold-da -template 19
+$ metalcloud-cli drive-array create -ia gold -infra demo -size 100000 -label gold-da -template 19
 ```

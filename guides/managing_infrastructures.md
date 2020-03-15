@@ -23,7 +23,7 @@ This tutorial uses the CLI. Visit [using the CLI](/guides/using_the_cli) for mor
 
 
  ```bash
- metalcloud-cli new infra -label test1
+ metalcloud-cli infrastructure create -label test1
  ```
 
 ## Listing infrastructures using the CLI
@@ -59,4 +59,4 @@ The name of the infrastructure can be changed. This will have an effect on all l
 
 
 Where to go from here:
-1. [Creating an InstanceArray](/guides/creating_an_instance_array)
+1. [Creating an InstanceArray](/guides/managing_instance_arrays)

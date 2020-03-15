@@ -19,7 +19,7 @@
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Using the Terraform provider" href="using_the_terraform_provider.html" />
-    <link rel="prev" title="Creating an instance array" href="creating_an_instance_array.html" /> 
+    <link rel="prev" title="Managing instance arrays" href="managing_instance_arrays.html" /> 
   </head><body>
     <div class="related" role="navigation" aria-label="related navigation">
       <h3>Navigation</h3>
@@ -31,7 +31,7 @@
           <a href="using_the_terraform_provider.html" title="Using the Terraform provider"
              accesskey="N">next</a> |</li>
         <li class="right" >
-          <a href="creating_an_instance_array.html" title="Creating an instance array"
+          <a href="managing_instance_arrays.html" title="Managing instance arrays"
              accesskey="P">previous</a> |</li>
         <li class="nav-item nav-item-0"><a href="../index.html">Metalcloud  documentation</a> &#187;</li> 
       </ul>
@@ -91,10 +91,10 @@ Binaries are available <a class="reference external" href="https://github.com/bi
 <div class="section" id="getting-started">
 <h2>Getting started<a class="headerlink" href="#getting-started" title="Permalink to this headline">¶</a></h2>
 <p>To create an infrastructure, in the default datacenter, configured via the <code class="docutils literal notranslate"><span class="pre">METALCLOUD_DATACENTER</span></code> environment variable):</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">metalcloud</span><span class="o">-</span><span class="n">cli</span> <span class="n">create</span> <span class="n">infrastructure</span> <span class="o">-</span><span class="n">label</span> <span class="n">test</span> <span class="o">-</span><span class="n">return_id</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">metalcloud</span><span class="o">-</span><span class="n">cli</span> <span class="n">infrastructure</span> <span class="n">create</span> <span class="o">-</span><span class="n">label</span> <span class="n">test</span> <span class="o">-</span><span class="k">return</span><span class="o">-</span><span class="nb">id</span>
 </pre></div>
 </div>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">metalcloud</span><span class="o">-</span><span class="n">cli</span> <span class="nb">list</span> <span class="n">infrastructure</span> 
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">metalcloud</span><span class="o">-</span><span class="n">cli</span> <span class="n">infrastructure</span> <span class="nb">list</span>
 <span class="o">+-------+-----------------------------------------+-------------------------------+-----------+-----------+---------------------+---------------------+</span>
 <span class="o">|</span> <span class="n">ID</span>    <span class="o">|</span> <span class="n">LABEL</span>                                   <span class="o">|</span> <span class="n">OWNER</span>                         <span class="o">|</span> <span class="n">REL</span><span class="o">.</span>      <span class="o">|</span> <span class="n">STATUS</span>    <span class="o">|</span> <span class="n">CREATED</span>             <span class="o">|</span> <span class="n">UPDATED</span>             <span class="o">|</span>
 <span class="o">+-------+-----------------------------------------+-------------------------------+-----------+-----------+---------------------+---------------------+</span>
@@ -103,11 +103,11 @@ Binaries are available <a class="reference external" href="https://github.com/bi
 </pre></div>
 </div>
 <p>To create an instance array in that infrastructure, get the ID of the infrastructure from above (12345):</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">metalcloud</span><span class="o">-</span><span class="n">cli</span> <span class="n">create</span> <span class="n">instance_array</span> <span class="o">-</span><span class="n">infra</span> <span class="mi">12345</span> <span class="o">-</span><span class="n">label</span> <span class="n">master</span> <span class="o">-</span><span class="n">proc</span> <span class="mi">1</span> <span class="o">-</span><span class="n">proc_core_count</span> <span class="mi">8</span> <span class="o">-</span><span class="n">ram</span> <span class="mi">16</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">metalcloud</span><span class="o">-</span><span class="n">cli</span> <span class="n">instance</span><span class="o">-</span><span class="n">array</span> <span class="n">create</span> <span class="o">-</span><span class="n">infra</span> <span class="mi">12345</span> <span class="o">-</span><span class="n">label</span> <span class="n">master</span> <span class="o">-</span><span class="n">proc</span> <span class="mi">1</span> <span class="o">-</span><span class="n">proc</span><span class="o">-</span><span class="n">core</span><span class="o">-</span><span class="n">count</span> <span class="mi">8</span> <span class="o">-</span><span class="n">ram</span> <span class="mi">16</span>
 </pre></div>
 </div>
 <p>To view the id of the previously created drive array:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">metalcloud</span><span class="o">-</span><span class="n">cli</span> <span class="nb">list</span> <span class="n">instance_array</span> <span class="o">-</span><span class="n">infra</span> <span class="mi">12345</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">metalcloud</span><span class="o">-</span><span class="n">cli</span> <span class="n">instance</span><span class="o">-</span><span class="n">array</span> <span class="nb">list</span> <span class="o">-</span><span class="n">infra</span> <span class="mi">12345</span>
 <span class="o">+-------+---------------------+---------------------+-----------+</span>
 <span class="o">|</span> <span class="n">ID</span>    <span class="o">|</span> <span class="n">LABEL</span>               <span class="o">|</span> <span class="n">STATUS</span>              <span class="o">|</span> <span class="n">INST_CNT</span>  <span class="o">|</span>
 <span class="o">+-------+---------------------+---------------------+-----------+</span>
@@ -117,11 +117,11 @@ Binaries are available <a class="reference external" href="https://github.com/bi
 </pre></div>
 </div>
 <p>To create a drive array and attach it to the previous instance array:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">metalcloud</span><span class="o">-</span><span class="n">cli</span> <span class="n">create</span> <span class="n">drive_array</span> <span class="o">-</span><span class="n">infra</span> <span class="mi">12345</span> <span class="o">-</span><span class="n">label</span> <span class="n">master</span><span class="o">-</span><span class="n">da</span> <span class="o">-</span><span class="n">ia</span> <span class="mi">54321</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">metalcloud</span><span class="o">-</span><span class="n">cli</span> <span class="n">drive</span><span class="o">-</span><span class="n">array</span> <span class="n">create</span> <span class="o">-</span><span class="n">infra</span> <span class="mi">12345</span> <span class="o">-</span><span class="n">label</span> <span class="n">master</span><span class="o">-</span><span class="n">da</span> <span class="o">-</span><span class="n">ia</span> <span class="mi">54321</span>
 </pre></div>
 </div>
 <p>To view the current status of the infrastructure</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">metalcloud</span><span class="o">-</span><span class="n">cli</span> <span class="n">get</span> <span class="n">infrastructure</span> <span class="o">-</span><span class="nb">id</span> <span class="mi">12345</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">metalcloud</span><span class="o">-</span><span class="n">cli</span> <span class="n">infrastructure</span> <span class="n">get</span> <span class="o">-</span><span class="nb">id</span> <span class="mi">12345</span>
 <span class="n">Infrastructures</span> <span class="n">I</span> <span class="n">have</span> <span class="n">access</span> <span class="n">to</span> <span class="p">(</span><span class="k">as</span> <span class="n">test</span><span class="nd">@test</span><span class="o">.</span><span class="n">com</span><span class="p">)</span>
 <span class="o">+-------+----------------+-------------------------------+-----------------------------------------------------------------------+-----------+</span>
 <span class="o">|</span> <span class="n">ID</span>    <span class="o">|</span> <span class="n">OBJECT_TYPE</span>    <span class="o">|</span> <span class="n">LABEL</span>                         <span class="o">|</span> <span class="n">DETAILS</span>                                                               <span class="o">|</span> <span class="n">STATUS</span>    <span class="o">|</span>
@@ -137,33 +137,28 @@ Binaries are available <a class="reference external" href="https://github.com/bi
 <h2>Condensed format<a class="headerlink" href="#condensed-format" title="Permalink to this headline">¶</a></h2>
 <p>The CLI also provides a “condensed format” for most of it’s commands:</p>
 <ul class="simple">
-<li>instance_array = ia</li>
-<li>drive_array = da</li>
+<li>instance=array = ia</li>
+<li>drive-array = da</li>
 <li>infrastructure = infra</li>
 <li>list = ls</li>
 <li>delete = rm
 …</li>
 </ul>
 <p>This allows commands such as:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">metalcloud</span><span class="o">-</span><span class="n">cli</span> <span class="n">ls</span> <span class="n">infra</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">metalcloud</span><span class="o">-</span><span class="n">cli</span> <span class="n">infra</span> <span class="n">ls</span>
 </pre></div>
 </div>
 </div>
 <div class="section" id="using-label-instead-of-ids">
 <h2>Using label instead of IDs<a class="headerlink" href="#using-label-instead-of-ids" title="Permalink to this headline">¶</a></h2>
 <p>Most commands also take a label instead of an id as a parameter. For example:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">metalcloud</span><span class="o">-</span><span class="n">cli</span> <span class="n">show</span> <span class="n">infra</span> <span class="o">-</span><span class="nb">id</span> <span class="nb">complex</span><span class="o">-</span><span class="n">demo</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">metalcloud</span><span class="o">-</span><span class="n">cli</span> <span class="n">infra</span> <span class="n">show</span> <span class="o">-</span><span class="nb">id</span> <span class="nb">complex</span><span class="o">-</span><span class="n">demo</span>
 </pre></div>
 </div>
 </div>
 <div class="section" id="permissions">
 <h2>Permissions<a class="headerlink" href="#permissions" title="Permalink to this headline">¶</a></h2>
 <p>Some commands depend on various permissions. For instance you cannot access another user’s infrastructure unless you are a delegate of it.</p>
-<blockquote>
-<div>Known issue: Currently, in order to retrieve the IPMI credentials of servers (using <code class="docutils literal notranslate"><span class="pre">metalcloud-cli</span> <span class="pre">get</span> <span class="pre">server</span> <span class="pre">-id</span> <span class="pre">123</span> <span class="pre">-show-credentials</span></code>) the developer endpoint must be used. This will be solved in other releases.</div></blockquote>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">export</span> <span class="nv">METALCLOUD_ENDPOINT</span><span class="o">=</span><span class="s2">&quot;https://api.poc.metalcloud.io/api/developer/developer&quot;</span>
-</pre></div>
-</div>
 </div>
 </div>
 
@@ -173,9 +168,6 @@ Binaries are available <a class="reference external" href="https://github.com/bi
       </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
-            <p class="logo"><a href="../index.html">
-              <img class="logo" src="../_static/bigsteplogo.png" alt="Logo"/>
-            </a></p>
   <h3><a href="../index.html">Table of Contents</a></h3>
   <ul>
 <li><a class="reference internal" href="#">Using the CLI</a><ul>
@@ -191,8 +183,8 @@ Binaries are available <a class="reference external" href="https://github.com/bi
 </ul>
 
   <h4>Previous topic</h4>
-  <p class="topless"><a href="creating_an_instance_array.html"
-                        title="previous chapter">Creating an instance array</a></p>
+  <p class="topless"><a href="managing_instance_arrays.html"
+                        title="previous chapter">Managing instance arrays</a></p>
   <h4>Next topic</h4>
   <p class="topless"><a href="using_the_terraform_provider.html"
                         title="next chapter">Using the Terraform provider</a></p>
@@ -229,7 +221,7 @@ Binaries are available <a class="reference external" href="https://github.com/bi
           <a href="using_the_terraform_provider.html" title="Using the Terraform provider"
              >next</a> |</li>
         <li class="right" >
-          <a href="creating_an_instance_array.html" title="Creating an instance array"
+          <a href="managing_instance_arrays.html" title="Managing instance arrays"
              >previous</a> |</li>
         <li class="nav-item nav-item-0"><a href="../index.html">Metalcloud  documentation</a> &#187;</li> 
       </ul>

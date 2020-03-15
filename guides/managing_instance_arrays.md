@@ -61,7 +61,7 @@ This tutorial uses the CLI. Visit [using the CLI](/guides/using_the_cli) for mor
 1. List available templates
 
 ```bash
-$ metalcloud-cli ls volume_templates
+$ metalcloud-cli volume-template list
 Volume templates I have access to as user alex.d@d.com:
 +-------+-----------------------------------------+----------------------------------+-------+---------------------------+-----------+
 | ID    | LABEL                                   | NAME                             | SIZE  | STATUS                    | FLAGS     |
@@ -78,19 +78,19 @@ Total: 4 Volume templates
 
 
 ```bash
-$ metalcloud-cli create instance_array -boot pxe_iscsi -firewall_management_disabled -infra demo -instance_count 1 -label gold
+$ metalcloud-cli instance-array create -boot pxe_iscsi -firewall-management-disabled -infra demo -instance-count 1 -label gold
 ```
 3. Add a drive array to the instance
 
 Use the ID of the template, for instance **18** for CentOS 7.1
 
 ```bash
-$ metalcloud-cli create da -ia gold -infra demo -size 100000 -label gold-da -template 18
+$ metalcloud-cli drive-array create -ia gold -infra demo -size 100000 -label gold-da -template 18
 ```
 
 4. Deploy the infrastructure
 ```bash
-$ metalcloud-cli deploy infra -id demo
+$ metalcloud-cli infrastructure deploy -id demo
 ```
 
 ### Retrieving server access credentials using the CLI
@@ -99,5 +99,5 @@ $ metalcloud-cli deploy infra -id demo
 1. To retrive your ssh credentials use the following command:
 
 ```bash
-$ metalcloud-cli show ia -id gold -show_credentials
+$ metalcloud-cli instance-array get -id gold -show-credentials
 ```

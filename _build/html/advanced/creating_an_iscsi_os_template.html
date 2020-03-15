@@ -40,15 +40,15 @@
             
   <div class="section" id="creating-an-iscsi-os-template">
 <h1>Creating an iscsi OS template<a class="headerlink" href="#creating-an-iscsi-os-template" title="Permalink to this headline">¶</a></h1>
-<p>Custom iSCSI templates allow users to build their own images.</p>
-<p>Typically a user would start from a standard Metalcloud template and modify it.</p>
+<p>Custom iSCSI templates allow users to build their own images. Typically a user would start from a standard Metalcloud template and modify it:</p>
+<p><img alt="../_images/creating_custom_template1.svg" src="../_images/creating_custom_template1.svg" /></p>
 <p>This tutorial uses the CLI. Visit <a class="reference internal" href="../guides/using_the_cli.html"><span class="doc">using the CLI</span></a> for more details.</p>
 <div class="section" id="creating-a-golden-drive">
 <h2>Creating a “golden” drive<a class="headerlink" href="#creating-a-golden-drive" title="Permalink to this headline">¶</a></h2>
 <ol class="simple">
 <li>List available templates</li>
 </ol>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ metalcloud-cli ls volume_templates
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ metalcloud-cli volume_template list
 Volume templates I have access to as user alex.d@d.com:
 +-------+-----------------------------------------+----------------------------------+-------+---------------------------+-----------+
 <span class="p">|</span> ID    <span class="p">|</span> LABEL                                   <span class="p">|</span> NAME                             <span class="p">|</span> SIZE  <span class="p">|</span> STATUS                    <span class="p">|</span> FLAGS     <span class="p">|</span>
@@ -64,38 +64,38 @@ Total: <span class="m">4</span> Volume templates
 <ol class="simple">
 <li>Provision an Instance</li>
 </ol>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ metalcloud-cli create instance_array -boot pxe_iscsi -firewall_management_disabled -infra demo -instance_count <span class="m">1</span> -label gold
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ metalcloud-cli  instance-array create -boot pxe-iscsi -firewall-management-disabled -infra demo -instance-count <span class="m">1</span> -label gold
 </pre></div>
 </div>
 <ol class="simple">
 <li>Add a drive array to the instance</li>
 </ol>
 <p>Use the ID of the template, for instance <strong>18</strong> for CentOS 7.1</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ metalcloud-cli create da -ia gold -infra demo -size <span class="m">100000</span> -label gold-da -template <span class="m">18</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ metalcloud-cli drive-array create  -ia gold -infra demo -size <span class="m">100000</span> -label gold-da -template <span class="m">18</span>
 </pre></div>
 </div>
 <ol class="simple">
 <li>Deploy the infrastructure</li>
 </ol>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ metalcloud-cli deploy infra -id demo
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ metalcloud-cli infrastructure deploy -id demo
 </pre></div>
 </div>
 <ol class="simple">
 <li>Login or connect to the server and perform required modifications, test etc.</li>
 </ol>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ metalcloud-cli show ia -id gold -show_credentials
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ metalcloud-cli instance-array get -id gold -show-credentials
 </pre></div>
 </div>
 <ol class="simple">
 <li>Shutdown the server to avoid in-flight data from not being serialized</li>
 </ol>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$  metalcloud-cli power_control instance -id <span class="m">58413</span> -operation soft
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$  metalcloud-cli instance power-control  -id <span class="m">58413</span> -operation soft
 </pre></div>
 </div>
 <ol class="simple">
 <li>List the drives of the <strong>gold-da</strong> drive array</li>
 </ol>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ metalcloud-cli show da -id gold-da
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ metalcloud-cli drive-array get -id gold-da
 Drive Array <span class="c1">#47799 attached to instance array 37135 has the following drives:</span>
 +-------+-------------------------------+-----------+-----------+-----------+-------------------------------+--------------------------+--------------------------+
 <span class="p">|</span> ID    <span class="p">|</span> LABEL                         <span class="p">|</span> STATUS    <span class="p">|</span> SIZE <span class="o">(</span>MB<span class="o">)</span> <span class="p">|</span> TYPE      <span class="p">|</span> ATTACHED TO                   <span class="p">|</span> TEMPLATE                 <span class="p">|</span> DETAILS                  <span class="p">|</span>
@@ -111,33 +111,33 @@ Total: <span class="m">1</span> Drives
 <ol class="simple">
 <li>Create a template from the first drive</li>
 </ol>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ metalcloud-cli create vt -id <span class="m">74270</span> -boot_methods_supported pxe_iscsi -boot_type hybrid -label <span class="s2">&quot;centos7.1-custom&quot;</span> -description <span class="s2">&quot;Custom 7.1 template&quot;</span> -name <span class="s2">&quot;Custom Centos 7.1&quot;</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ metalcloud-cli volume-template create  -id <span class="m">74270</span> -boot-methods-supported pxe-iscsi -boot-type hybrid -label <span class="s2">&quot;centos7.1-custom&quot;</span> -description <span class="s2">&quot;Custom 7.1 template&quot;</span> -name <span class="s2">&quot;Custom Centos 7.1&quot;</span>
 </pre></div>
 </div>
 <p>The “create volume_template” operation takes the following arguments:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>alex@Alexandrus-MacBook-Pro metalcloud-docs $ metalcloud-cli create vt -h
-Command: create volume_templates   Create volume templates <span class="o">(</span>alternatively use <span class="s2">&quot;new vt&quot;</span><span class="o">)</span>
-	  -boot_methods_supported    The boot_methods_supported of the volume template. Defaults to <span class="s1">&#39;pxe_iscsi&#39;</span>.
-	  -boot_type                 <span class="o">(</span>Required<span class="o">)</span> The boot_type of the volume template. Possible values: <span class="s1">&#39;uefi_only&#39;</span>,<span class="s1">&#39;legacy_only&#39;</span>,<span class="s1">&#39;hybrid&#39;</span> 
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ ./metalcloud-cli volume-template create -h
+Command: volume-template create    Create volume templates <span class="o">(</span>alternatively use <span class="s2">&quot;new vt&quot;</span><span class="o">)</span>
+	  -boot-methods-supported    The boot_methods_supported of the volume template. Defaults to <span class="s1">&#39;pxe_iscsi&#39;</span>.
+	  -boot-type                 <span class="o">(</span>Required<span class="o">)</span> The boot_type of the volume template. Possible values: <span class="s1">&#39;uefi_only&#39;</span>,<span class="s1">&#39;legacy_only&#39;</span>,<span class="s1">&#39;hybrid&#39;</span> 
 	  -deprecated                <span class="o">(</span>Flag<span class="o">)</span> <span class="nb">set</span> to <span class="nb">true</span> <span class="k">if</span> this template is deprecated
 	  -description               <span class="o">(</span>Required<span class="o">)</span> The description of the volume template
 	  -id                        <span class="o">(</span>Required<span class="o">)</span> The id of the drive to create the volume template from
 	  -label                     <span class="o">(</span>Required<span class="o">)</span> The label of the volume template
 	  -name                      <span class="o">(</span>Required<span class="o">)</span> The display name of the volume template
-	  -return_id                 <span class="o">(</span>Optional<span class="o">)</span> Will print the ID of the created Drive Array. Useful <span class="k">for</span> automating tasks.
+	  -return-id                 <span class="o">(</span>Optional<span class="o">)</span> Will print the ID of the created Drive Array. Useful <span class="k">for</span> automating tasks.
 	  -tags                      The tags of the volume template, comma separated.
 	  -h                         Show <span class="nb">command</span> <span class="nb">help</span> and exit.
 </pre></div>
 </div>
 <p>Notes on server boot methods:</p>
 <ul class="simple">
-<li>-boot_methods_supported reffers to the type of mechanism emplyed to boot this template. For iSCSi drives use <code class="docutils literal notranslate"><span class="pre">pxe_iscsi</span></code>.</li>
-<li>-boot_type reffers to the boot process of the server which can be either legacy BIOS or EFI. Hybrid reffers to templates that support both mechanisms.</li>
+<li>-boot-methods-supported reffers to the type of mechanism emplyed to boot this template. For iSCSi drives use <code class="docutils literal notranslate"><span class="pre">pxe_iscsi</span></code>.</li>
+<li>-boot-type reffers to the boot process of the server which can be either legacy BIOS or EFI. Hybrid reffers to templates that support both mechanisms.</li>
 </ul>
 <ol class="simple">
 <li>Check that the volume template has been created</li>
 </ol>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ metalcloud-cli ls volume_templates
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ metalcloud-cli volume-template list
 Volume templates I have access to as user alex.d@d.com:
 +-------+-----------------------------------------+----------------------------------+-------+---------------------------+-----------+
 <span class="p">|</span> ID    <span class="p">|</span> LABEL                                   <span class="p">|</span> NAME                             <span class="p">|</span> SIZE  <span class="p">|</span> STATUS                    <span class="p">|</span> FLAGS     <span class="p">|</span>
@@ -154,7 +154,7 @@ Total: <span class="m">5</span> Volume templates
 <blockquote>
 <div>Please note that the volume template is a private template meaning only it’s owner has access to it.</div></blockquote>
 <p>Now the template can be used as any other template.</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ metalcloud-cli create da -ia gold -infra demo -size <span class="m">100000</span> -label gold-da -template <span class="m">19</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ metalcloud-cli drive-array create -ia gold -infra demo -size <span class="m">100000</span> -label gold-da -template <span class="m">19</span>
 </pre></div>
 </div>
 </div>
@@ -166,9 +166,6 @@ Total: <span class="m">5</span> Volume templates
       </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
-            <p class="logo"><a href="../index.html">
-              <img class="logo" src="../_static/bigsteplogo.png" alt="Logo"/>
-            </a></p>
   <h3><a href="../index.html">Table of Contents</a></h3>
   <ul>
 <li><a class="reference internal" href="#">Creating an iscsi OS template</a><ul>

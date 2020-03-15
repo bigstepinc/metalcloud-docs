@@ -59,11 +59,11 @@ Use `metalcloud-cli help` for a list of supported commands.
 
 To create an infrastructure, in the default datacenter, configured via the `METALCLOUD_DATACENTER` environment variable):
 ```
-metalcloud-cli create infrastructure -label test -return_id
+metalcloud-cli infrastructure create -label test -return-id
 ```
 
 ```
-metalcloud-cli list infrastructure 
+metalcloud-cli infrastructure list
 +-------+-----------------------------------------+-------------------------------+-----------+-----------+---------------------+---------------------+
 | ID    | LABEL                                   | OWNER                         | REL.      | STATUS    | CREATED             | UPDATED             |
 +-------+-----------------------------------------+-------------------------------+-----------+-----------+---------------------+---------------------+
@@ -74,13 +74,13 @@ metalcloud-cli list infrastructure
 To create an instance array in that infrastructure, get the ID of the infrastructure from above (12345):
 
 ```
-metalcloud-cli create instance_array -infra 12345 -label master -proc 1 -proc_core_count 8 -ram 16
+metalcloud-cli instance-array create -infra 12345 -label master -proc 1 -proc-core-count 8 -ram 16
 ```
 
 To view the id of the previously created drive array:
 
 ```
-metalcloud-cli list instance_array -infra 12345
+metalcloud-cli instance-array list -infra 12345
 +-------+---------------------+---------------------+-----------+
 | ID    | LABEL               | STATUS              | INST_CNT  |
 +-------+---------------------+---------------------+-----------+
@@ -92,13 +92,13 @@ Total: 1 Instance Arrays
 To create a drive array and attach it to the previous instance array:
 
 ```
-metalcloud-cli create drive_array -infra 12345 -label master-da -ia 54321
+metalcloud-cli drive-array create -infra 12345 -label master-da -ia 54321
 ```
 
 To view the current status of the infrastructure
 
 ```
-metalcloud-cli get infrastructure -id 12345
+metalcloud-cli infrastructure get -id 12345
 Infrastructures I have access to (as test@test.com)
 +-------+----------------+-------------------------------+-----------------------------------------------------------------------+-----------+
 | ID    | OBJECT_TYPE    | LABEL                         | DETAILS                                                               | STATUS    |
@@ -112,8 +112,8 @@ Total: 2 elements
 ### Condensed format
 
 The CLI also provides a "condensed format" for most of it's commands:
-* instance_array = ia
-* drive_array = da
+* instance=array = ia
+* drive-array = da
 * infrastructure = infra
 * list = ls
 * delete = rm
@@ -121,24 +121,17 @@ The CLI also provides a "condensed format" for most of it's commands:
 
 This allows commands such as:
 ```
-metalcloud-cli ls infra
+metalcloud-cli infra ls
 ```
 
 ### Using label instead of IDs
 
 Most commands also take a label instead of an id as a parameter. For example:
 ```
-metalcloud-cli show infra -id complex-demo
+metalcloud-cli infra show -id complex-demo
 ```
 
 
 ### Permissions
 
 Some commands depend on various permissions. For instance you cannot access another user's infrastructure unless you are a delegate of it. 
-
->Known issue: Currently, in order to retrieve the IPMI credentials of servers (using `metalcloud-cli get server -id 123 -show-credentials`) the developer endpoint must be used. This will be solved in other releases.
-
-```bash
-export METALCLOUD_ENDPOINT="https://api.poc.metalcloud.io/api/developer/developer"
-```
-
