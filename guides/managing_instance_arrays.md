@@ -3,7 +3,7 @@
 This is how Servers This is often the very first step in using the Metal Cloud.
 Make sure you have created an account with us by signing up [here](http://bigstep.com)
 
-### Deploying an instance array using the Infrastructure Editor
+## Deploying an instance array using the Infrastructure Editor
 
 In the MetalCloud servers (called **Instances**) are groupped in **InstanceArrays**. By default an infrastructure is created for you called "my-infrastructure" in a datacenter geographically close to you.
 
@@ -31,7 +31,7 @@ Click on the big "Deploy" button from the bottom of the screen.
 
 ![](/assets/guides/getting_started61.png)
 
-### Retrieving server access credentials using the UI
+## Retrieving server access credentials using the UI
 
 Once an infrastructure is active you can access the servers' access credentials by clicking on the instance array.
 
@@ -54,7 +54,7 @@ The host can be any one of the:
 
 >Note: It is recommended that you register your public SSH key in the **Account settings** section so that it gets automatically added on the hosts at deploy time.
 
-### Deploying an instance array using the CLI
+## Deploying an instance array using the CLI
 
 This tutorial uses the CLI. Visit [using the CLI](/guides/using_the_cli) for more details.
 
@@ -93,11 +93,31 @@ $ metalcloud-cli drive-array create -ia gold -infra demo -size 100000 -label gol
 $ metalcloud-cli infrastructure deploy -id demo
 ```
 
-### Retrieving server access credentials using the CLI
+## Retrieving server access credentials using the CLI
 
 
-1. To retrive your ssh credentials use the following command:
+To retrive your ssh credentials use the following command:
 
 ```bash
 $ metalcloud-cli instance-array get -id gold -show-credentials
 ```
+
+
+## Checking the power status of an instance using the CLI
+
+To retrieve your instances status use:
+```bash
+metalcloud-cli instance-array get -id workers -show-power-status
+```
+
+## Rebooting an instance using the CLI
+To perform power operations on a particular instance use:
+```bash
+metalcloud-cli instance power-control -id 1023 -operation reset
+```
+
+Possible operations are:
+* on - power on
+* off -power off (hard)
+* reset - Reboot (hard)
+* soft - Soft shutdown (ACPI via the operating system)

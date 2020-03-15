@@ -55,8 +55,11 @@ Total: 3 Infrastructures
 
 The name of the infrastructure can be changed. This will have an effect on all long form DNS records such as instance array names in the form: `instance-58417.instance-array-37139.vanilla.my-infrastructure.8186.bigstep.io`
 
+## Deleting an infrastructure using the CLI
 
-
+```bash
+$ metalcloud-cli infrastructure delete -id demo
+```
 
 Where to go from here:
 1. [Creating an InstanceArray](/guides/managing_instance_arrays)

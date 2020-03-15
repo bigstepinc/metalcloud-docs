@@ -109,6 +109,10 @@ Infrastructures I have access to (as test@test.com)
 Total: 2 elements
 ```
 
+### Use flags at the end
+
+Flags, noted with `(Flag)` in the command help are options that take no arguments. They need to be used at the end of the command line.
+
 ### Condensed format
 
 The CLI also provides a "condensed format" for most of it's commands:
