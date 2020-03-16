@@ -86,75 +86,91 @@ This process is operating system version but in general lines it requires a user
 
 1. Install iscsi support
 
-        ```bash
-        yum install iscsi-initiator-utils
-        ```
+    ```bash
+    yum install iscsi-initiator-utils
+    ```
 
 2. Set node.startup to automatic.
 
-        ```bash
-        vi /etc/iscsi/iscsid.conf
+    ```bash
+    vi /etc/iscsi/iscsid.conf
 
-        [...]
-        node.startup = automatic
-        [...]
-        ```
+    [...]
+    node.startup = automatic
+    [...]
+    ```
 
 3. Start the iSCSI discovery
 
-        ```bash
-        iscsiadm -m discovery -t st -p 100.96.0.12
-        iscsiadm -m node
-        ```
+    ```bash
+    iscsiadm -m discovery -t st -p 100.96.0.12
+    iscsiadm -m node
+    ```
 4. Login the iSCSI target. Notice the .33 at the end of the IQN. That's the LUN ID from the drive array's credentials.
 
-        ```bash
-        iscsiadm -m node --targetname "iqn.2013-01.com.bigstep:storage.dd.6fjo87t.dd.33" --portal "100.96.0.12:3260" --login
-        ```
+    ```bash
+    iscsiadm -m node --targetname "iqn.2013-01.com.bigstep:storage.dd.6fjo87t.dd.33" --portal "100.96.0.12:3260" --login
+    ```
 
 5. Identifying the drive by looking at dmesg
 
-        ```bash
-        $ dmesg
-        ```
+    ```bash
+    $ dmesg
+    ```
 
 5. Formatting & mounting the drive
 The drive is now visible in the OS just like any other drive:
 
-        ```bash
-        $ mkfs.ext3 /dev/sdb1
-        $ mount /dev/sdb1 /mnt
-        $ ls -l
-        ```
+    ```bash
+    $ mkfs.ext3 /dev/sdb1
+    $ mount /dev/sdb1 /mnt
+    $ ls -l
+    ```
 
-## Logging into the target on Windows
-Using powershell:
-1. Add a new portal
+## Logging into a drive on Windows using PowerShell
 
-        ```bash
-        New-IscsiTargetPortal -TargetPortalAddress "100.96.0.192" -AuthenticationType OneWayCHAP -ChapUsername "ss" -ChapSecret "ss"
-        ```
-2. Add a new target
+1. Set iSCSI Initiator service to started and automatic
+    ```bash
+    Set-Service msiscsi -startuptype "automatic"
+    Start-Service msiscsi
+    ```
 
-        ```bash
-        $GIT = Get-IscsiTarget | Where-Object {$_.IsConnected -like "False"}
-        ```
+2. Check iSCSI Initiator Configuration Initiator Name
+    ```bash
+    (Get-WmiObject -Namespace root\wmi -Class MSiSCSIInitiator_MethodClass).iSCSINodeName
+    ```
 
-3. Connect to the new target (disconnect if already connected)
+3. Set iSCSI Initiator Configuration Initiator Name.
+    Note -NewNodeAddress is retrieved from the CLI by running metalcloud-cli instance-array get -id workers -show-iscsi-credentials
+    ```bash
+    $AddInP = (Get-InitiatorPort)
+    $AddInP | Select NodeAddress
+    Set-InitiatorPort -NodeAddress $AddInP.NodeAddress -NewNodeAddress "iqn.2020-03.com.bigstep.storage:instance-0000"
+    ```
 
+4. Add a new portal
+    ```bash
+    New-IscsiTargetPortal -TargetPortalAddress "100.96.0.192" -AuthenticationType OneWayCHAP -ChapUsername "ss" -ChapSecret "ss"
+    ```
+
+5. Add a new target
+    ```bash
+    $GIT = Get-IscsiTarget | Where-Object {$_.IsConnected -like "False"}
+    ```
+
+6. Connect to the new target (disconnect if already connected)
     ```bash
     Disconnect-IscsiTarget -NodeAddress $GIT.NodeAddress -Confirm:$false
     Connect-IscsiTarget -nodeaddress $GIT.NodeAddress
     ```
-4. Make persistent
 
+7. Make persistent
     You can skip this step or set the -IsPersistent to false if reconnect not required at reboot
-
     ```bash
     Connect-IscsiTarget -nodeaddress $GIT.NodeAddress -IsPersistent $True
     ```
-5. Connect to the target
 
+8. Connect to the target
     ```bash
     Connect-IscsiTarget -nodeaddress $GIT.NodeAddress -IsPersistent $False -AsJob
     ```
@@ -163,10 +179,10 @@ Using powershell:
 
 To disconnect all connections:
 
-    ```bash
-    $GIT = Get-IscsiTarget | Where-Object {$_.IsConnected -like "True"}
-    Disconnect-IscsiTarget -NodeAddress $GIT.NodeAddress -Confirm:$false
-    ```
+```bash
+$GIT = Get-IscsiTarget | Where-Object {$_.IsConnected -like "True"}
+Disconnect-IscsiTarget -NodeAddress $GIT.NodeAddress -Confirm:$false
+```
 
 
 ## Deleting a drive array via the CLI
