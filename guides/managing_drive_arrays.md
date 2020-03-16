@@ -4,6 +4,28 @@ Drives are iSCSI based block devices attached to servers at runtime. They can be
 
 **Drive arrays** are collections of identical drives that users can control as a single entity.
 
+## Creating a drive array using the UI
+There are multiple was to create a drive array from the **Infrastructure Editor**:
+1. click on on an instance array and go to the **DriveArray** tabs
+2. Click on Create **DriveArray** button
+
+![](/assets/guides/managing_drive_arrays1.png)
+
+## Listing drive arrays of an instance array using the UI
+
+1. Click on on an instance array and go to the **DriveArray** tabs
+
+![](/assets/guides/managing_drive_arrays1.png)
+
+## Retrieving the drive array's connection details from the UI
+
+1. Click on on an instance array and go to the **DriveArray** tabs
+2. Select one of the drive arrays
+3. Click on **Show Drives**
+4. Scroll down to **iSCSI credentials**
+
+![](/assets/guides/managing_drive_arrays1.png)
+
 ## Creating a drive array using the CLI
 
 ```bash
