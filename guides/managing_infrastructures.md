@@ -6,13 +6,13 @@ Instance Arrays are collections of identical servers used as a single entity.
 
 1. In the infrastructure selector on the very top of the editor select **Create an infrastructure**
 
-![](/assets/guides/creating_an_infrastructure1.png)
+    ![](/assets/guides/creating_an_infrastructure1.png)
 
 
 2. Add the name and select your datacenter.
 
 
-![](/assets/guides/creating_an_infrastructure2.png)
+    ![](/assets/guides/creating_an_infrastructure2.png)
 
 
 3. Click **Create**
