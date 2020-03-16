@@ -126,27 +126,47 @@ $ ls -l
 
 ## Logging into the target on Windows
 
-1. Add a new portal
+1. Set iSCSI Initiator service to started and automatic
+```bash
+Set-Service msiscsi -startuptype "automatic"
+Start-Service msiscsi
+```
+
+2. Check iSCSI Initiator Configuration Initiator Name
+```bash
+(Get-WmiObject -Namespace root\wmi -Class MSiSCSIInitiator_MethodClass).iSCSINodeName
+```
+
+3. Set iSCSI Initiator Configuration Initiator Name. Note -NewNodeAddress is retrieved from the CLI by running metalcloud-cli instance-array get -id workers -show-iscsi-credentials
+```bash
+$AddInP = (Get-InitiatorPort)
+$AddInP | Select NodeAddress
+Set-InitiatorPort -NodeAddress $AddInP.NodeAddress -NewNodeAddress "iqn.2020-03.com.bigstep.storage:instance-0000"
+```
+
+4. Add a new portal
 ```bash
 New-IscsiTargetPortal -TargetPortalAddress "100.96.0.192" -AuthenticationType OneWayCHAP -ChapUsername "ss" -ChapSecret "ss"
 ```
-2. Add a new target
 
+5. Add a new target
 ```bash
 $GIT = Get-IscsiTarget | Where-Object {$_.IsConnected -like "False"}
 ```
 
-3. Connect to the new target (disconnect if already connected)
+6. Connect to the new target (disconnect if already connected)
 ```bash
 Disconnect-IscsiTarget -NodeAddress $GIT.NodeAddress -Confirm:$false
 Connect-IscsiTarget -nodeaddress $GIT.NodeAddress
 ```
-4. Make persistent
+
+7. Make persistent
 You can skip this step or set the -IsPersistent to false if reconnect not required at reboot
 ```bash
 Connect-IscsiTarget -nodeaddress $GIT.NodeAddress -IsPersistent $True
 ```
-5. Connect to the target
+
+8. Connect to the target
 ```bash
 Connect-IscsiTarget -nodeaddress $GIT.NodeAddress -IsPersistent $False -AsJob
 ```
