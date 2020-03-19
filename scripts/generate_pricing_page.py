@@ -17,7 +17,7 @@ INSTANCE_DESCRIPTION_TEMPLATE="instance_description.tmpl"
 INSTANCES_LIST_PAGE="metalcloud_instances.rst"
 INSTANCES_LIST_PAGE_TEMPLATE=INSTANCES_LIST_PAGE+".tmpl"
 
-BLACKLIST=["M.20.128", "M.10.128","M.40.384.12D","M.4.32.1G"]
+BLACKLIST=["M.20.128", "M.10.128","M.40.384.12D","M.4.32.1G","M.40.256.v3","M.40.256.v1"]
 
 env = Environment(loader=FileSystemLoader(TEMPLATES_DIR))
 
@@ -82,9 +82,11 @@ for franchise in prices.keys():
             "server_network_total_capacity_mbps"]:
               instances[instance][k]=v[k]
 
+            
             #tmpl=Template('{{ v["server_processor_count"] }} x {{ v["server_processor_name"] }} {{v["server_ram_gbytes"]}} GB RAM {% if v["server_disk_count"]>0 %} {{v["server_disk_count"]}} x {{ v["server_disk_size_mbytes"]/1024|round }} GB {{ v["server_disk_type"] }} {% endif %} ')
             template = env.get_template(INSTANCE_DESCRIPTION_TEMPLATE)
             instances[instance]["description"] = template.render(v=v)
+
           
           currency=v["demand"]["resource_utilization_price_currency"]  
 
