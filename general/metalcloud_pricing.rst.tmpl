@@ -14,24 +14,25 @@ Metalcloud pricing
 
 The Metalcloud's pricing depends on a number of factors and the serivces used. Depending on the contract service it can be similar to a public cloud or similar to a dedicated servers provider.
 
-Make sure you check the pricing page on our website for [offers and packages](http://bigstep.com/pricing) that might help you get over the complexity if you're just getting started.
+Make sure you check the pricing page on our website for `offers <http://bigstep.com/pricing>`_ that might help you get over the complexity if you're just getting started.
+
 
 Instance pricing
 ================
 
 Metalcloud bare metal instances can be consumed both as on-demand and as rezerved resources.
+More details on the various instance types can be found here: :ref:`Metalcloud instances<instances>`
 
 On-demand bare metal servers (instances) pricing
 ------------------------------------------------
 
 Metalcloud bare metal instances allow for on-demand consumtion. They can be provisioned and de-provisioned at any time by the customer and paid only for the duration of the utilization.
 
-+-----------------------------------------------------------------------------------+--------------+--------------+--------------+
-|Instance                                                                           |Euro          |GBP           |USD           |
-+===================================================================================+==============+==============+==============+
-{% for k,v in instances.items(): %}| | {{"%-20s"|format("**"+k+"**")}}                                                            | {{ v["on_demand_EUR"]|format_eur }}/h | {{ v["on_demand_GBP"]|format_gbp }}/h | {{ v["on_demand_USD"]|format_usd }}/h |
-| | {{ "%-80s"|format(v["description"]) }}|              |              |              | 
-+-----------------------------------------------------------------------------------+--------------+--------------+--------------+
++--------------------+--------------+--------------+--------------+
+|Instance            |Euro          |GBP           |USD           |
++====================+==============+==============+==============+
+{% for k,v in instances.items(): %}|{{"%-20s"|format("**"+k+"**")}}| {{ v["on_demand_EUR"]|format_eur }}/h | {{ v["on_demand_GBP"]|format_gbp }}/h | {{ v["on_demand_USD"]|format_usd }}/h |
++--------------------+--------------+--------------+--------------+
 {% endfor %}
 
 If no rezervations or packages are applied instances priced depending on their utilization. Utilization is metered on a per second basis but the prices are displayed per hour. Metering starts from the moment a server is allocated to an instance and is stopped when it is stopped or deleted. The time the instance was allocated to a user ("ACTIVE" state) is charged at the end of the billing cycle typically 1 month.
@@ -41,12 +42,11 @@ Reservation pricing
 
 Reservations will overrride on-demand prices for matching instances and are up to 40% lower than on-demand pricing making them suitable for more predictible scenarios.
 
-+-----------------------------------------------------------------------------------+--------------+--------------+--------------+
-|Instance                                                                           |Euro          |GBP           |USD           |
-+===================================================================================+==============+==============+==============+
-{% for k,v in instances.items(): %}| | {{"%-20s"|format("**"+k+"**")}}                                                            | {{ v["reservation_EUR"]|format_eur }}/h | {{ v["reservation_GBP"]|format_gbp }}/h | {{ v["reservation_USD"]|format_usd }}/h |
-| | {{ "%-80s"|format(v["description"]) }}|              |              |              | 
-+-----------------------------------------------------------------------------------+--------------+--------------+--------------+
++--------------------+--------------+--------------+--------------+
+|Instance            |Euro          |GBP           |USD           |
++====================+==============+==============+==============+
+{% for k,v in instances.items(): %}|{{"%-20s"|format("**"+k+"**")}}| {{ v["reservation_EUR"]|format_eur }}/h | {{ v["reservation_GBP"]|format_gbp }}/h | {{ v["reservation_USD"]|format_usd }}/h |
++--------------------+--------------+--------------+--------------+
 {% endfor %}
 
 

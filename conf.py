@@ -38,6 +38,7 @@ release = u''
 extensions = [
     'sphinx.ext.githubpages',
     'recommonmark',  
+    'sphinx.ext.autosectionlabel',
 ]
 
 # Add any paths that contain templates here, relative to this directory.

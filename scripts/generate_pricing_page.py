@@ -14,6 +14,8 @@ TEMPLATES_DIR = OUTPUT_DIR
 PRICING_PAGE_NAME="metalcloud_pricing.rst"
 PRICING_PAGE_TEMPLATE=PRICING_PAGE_NAME+".tmpl"
 INSTANCE_DESCRIPTION_TEMPLATE="instance_description.tmpl"
+INSTANCES_LIST_PAGE="metalcloud_instances.rst"
+INSTANCES_LIST_PAGE_TEMPLATE=INSTANCES_LIST_PAGE+".tmpl"
 
 BLACKLIST=["M.20.128", "M.10.128","M.40.384.12D","M.4.32.1G"]
 
@@ -137,3 +139,10 @@ output = template.render(
 with open(os.path.join(OUTPUT_DIR,PRICING_PAGE_NAME), "w") as fh:
     fh.write(output.encode('utf-8'))
 
+#generate the files
+template = env.get_template(INSTANCES_LIST_PAGE_TEMPLATE)
+
+output = template.render(instances=instances)
+
+with open(os.path.join(OUTPUT_DIR,INSTANCES_LIST_PAGE), "w") as fh:
+    fh.write(output.encode('utf-8'))
