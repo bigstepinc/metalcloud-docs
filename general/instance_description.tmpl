@@ -1,0 +1,1 @@
+{{ v["server_processor_count"] }} x {{ v["server_processor_name"] }} {{v["server_ram_gbytes"]}} GB RAM {% if v["server_disk_count"]>0 %} {{v["server_disk_count"]}} x {{ v["server_disk_size_mbytes"]/1024|round }} GB {{ v["server_disk_type"] }} {% endif %}

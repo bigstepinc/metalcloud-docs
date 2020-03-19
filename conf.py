@@ -16,9 +16,6 @@
 # import sys
 # sys.path.insert(0, os.path.abspath('.'))
 
-
-# -- Project information -----------------------------------------------------
-
 project = u'Metalcloud'
 copyright = u'2020, Alex Bordei'
 author = u'Alex Bordei'
@@ -40,8 +37,7 @@ release = u''
 # ones.
 extensions = [
     'sphinx.ext.githubpages',
-    'recommonmark',
-    'sphinx_markdown_tables',    
+    'recommonmark',  
 ]
 
 # Add any paths that contain templates here, relative to this directory.
@@ -181,3 +177,6 @@ epub_exclude_files = ['search.html']
 #logo_only= True
 #html_favicon = "assets/favicon.png"
 
+
+
+ 
