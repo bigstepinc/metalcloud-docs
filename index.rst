@@ -14,6 +14,8 @@ The Bigstep Metalcloud is an IaaS service focused on offering low latency and hi
 
    general/introduction
    general/getting_started
+   general/metalcloud_instances
+   general/metalcloud_pricing
    general/additional_resources
 
 .. toctree::

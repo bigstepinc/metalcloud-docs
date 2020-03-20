@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns:xl="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg" xmlns:dc="http://purl.org/dc/elements/1.1/" version="1.1" viewBox="63 150 519 268" width="519" height="268">
+  <defs>
+    <marker orient="auto" overflow="visible" markerUnits="strokeWidth" id="FilledArrow_Marker" stroke-linejoin="miter" stroke-miterlimit="10" viewBox="-1 -4 10 8" markerWidth="10" markerHeight="8" color="black">
+      <g>
+        <path d="M 8 0 L 0 -3 L 0 3 Z" fill="currentColor" stroke="currentColor" stroke-width="1"/>
+      </g>
+    </marker>
+    <font-face font-family="Helvetica Neue" font-size="16" panose-1="2 0 5 3 0 0 0 2 0 4" units-per-em="1000" underline-position="-100" underline-thickness="50" slope="0" x-height="517" cap-height="714" ascent="951.9958" descent="-212.99744" font-weight="400">
+      <font-face-src>
+        <font-face-name name="HelveticaNeue"/>
+      </font-face-src>
+    </font-face>
+    <font-face font-family="Helvetica Neue" font-size="16" panose-1="2 0 5 3 0 0 0 9 0 4" units-per-em="1000" underline-position="-100" underline-thickness="50" slope="-750" x-height="517" cap-height="714" ascent="957.0007" descent="-212.99744" font-style="italic" font-weight="400">
+      <font-face-src>
+        <font-face-name name="HelveticaNeue-Italic"/>
+      </font-face-src>
+    </font-face>
+  </defs>
+  <metadata> Produced by OmniGraffle 7.13 
+    <dc:date>2020-03-18 20:56:23 +0000</dc:date>
+  </metadata>
+  <g id="Canvas_1" stroke-dasharray="none" fill="none" stroke="none" fill-opacity="1" stroke-opacity="1">
+    <title>Canvas 1</title>
+    <rect fill="white" x="63" y="150" width="519" height="268"/>
+    <g id="Canvas_1: Layer 1">
+      <title>Layer 1</title>
+      <g id="Line_2">
+        <line x1="107.5" y1="402.5" x2="107.5" y2="160.47812" marker-end="url(#FilledArrow_Marker)" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+      </g>
+      <g id="Line_3">
+        <line x1="87" y1="389" x2="503.4789" y2="389" marker-end="url(#FilledArrow_Marker)" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+      </g>
+      <g id="Line_6">
+        <path d="M 108.5 330.00158 C 108.5 330.00158 146.07362 195.46106 213 196 C 279.92638 196.53894 280.99075 331.6206 344.73438 331.90392 C 408.478 332.18723 394.6134 206.01817 438 197 C 481.3866 187.98183 497.8789 300.0719 497.8789 300.0719" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+      </g>
+      <g id="Line_7">
+        <line x1="107.5" y1="292" x2="543" y2="294" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="4.0,4.0" stroke-width="1"/>
+      </g>
+      <g id="Graphic_8">
+        <text transform="translate(539.5 397.5) rotate(-90)" fill="black">
+          <tspan font-family="Helvetica Neue" font-size="16" font-weight="400" fill="black" x="25.632" y="15">covered </tspan>
+          <tspan font-family="Helvetica Neue" font-size="16" font-weight="400" fill="black" x="19895197e-20" y="33.448">by reservations</tspan>
+        </text>
+      </g>
+      <g id="Graphic_9">
+        <text transform="translate(539.5 243.008) rotate(-90)" fill="black">
+          <tspan font-family="Helvetica Neue" font-size="16" font-weight="400" fill="black" x="1.792" y="15">covered by</tspan>
+          <tspan font-family="Helvetica Neue" font-size="16" font-weight="400" fill="black" x="8100187e-19" y="33.448">on-demand</tspan>
+        </text>
+      </g>
+      <g id="Graphic_10">
+        <text transform="translate(68.5 359.384) rotate(-90)" fill="black">
+          <tspan font-family="Helvetica Neue" font-size="16" font-style="italic" font-weight="400" fill="black" x="0" y="15">number of instances used</tspan>
+        </text>
+      </g>
+      <g id="Graphic_11">
+        <text transform="translate(279.936 394)" fill="black">
+          <tspan font-family="Helvetica Neue" font-size="16" font-style="italic" font-weight="400" fill="black" x="0" y="15">time</tspan>
+        </text>
+      </g>
+      <g id="Graphic_12">
+        <text transform="translate(113.5 294)" fill="black">
+          <tspan font-family="Helvetica Neue" font-size="16" font-weight="400" fill="black" x="0" y="15">number of rezerved instances</tspan>
+        </text>
+      </g>
+    </g>
+  </g>
+</svg>
