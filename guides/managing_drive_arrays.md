@@ -175,20 +175,70 @@ The drive is now visible in the OS just like any other drive:
     Connect-IscsiTarget -nodeaddress $GIT.NodeAddress -IsPersistent $False -AsJob
     ```
 
-## Disconnected from all iscsi targets in Windows
 
-To disconnect all connections:
 
+## Prepare and format disk in Powershell
+
+To make all attached disks online
+```bash
+Get-Disk | Where-Object IsOffline –Eq $True | Set-Disk –IsOffline $False
+```
+
+To Initialize all raw disks.  This will initialize the disks and create new partitions and format the drive without confirmation.
+```bash
+Get-Disk | Where-Object Partitionstyle -eq ‘RAW’ | Initialize-Disk -PartitionStyle GPT -PassThru | New-Partition -AssignDriveLetter -UseMaximumSize | Format-Volume -FileSystem NTFS -Confirm:$false
+```
+
+## Disconnect from all iscsi targets in Windows using Powershell Or Just disconnect Offline target
+
+To disconnect all connections. You may receive an error if there are files open on the associated drive. This will disconnect without confirmation
 ```bash
 $GIT = Get-IscsiTarget | Where-Object {$_.IsConnected -like "True"}
 Disconnect-IscsiTarget -NodeAddress $GIT.NodeAddress -Confirm:$false
 ```
+Or you can use the below.  This will disconnect without confirmation
+```bash
+Get-IscsiTarget | Where-Object IsConnected -Eq $True | Disconnect-IscsiTarget -Confirm:$false
+```
+Warning, the above two will disconnect ALL iSCSI drives.  If your operating system is on iSCSI, it is safer to use the below two commands
+
+Offline disks which are not Boot
+```bash
+Get-Disk | Where-Object IsBoot -Eq $False | Set-Disk -IsOffline $True
+```
+Disconnect iSCSI connection of offline disk 
+```bash
+Get-Disk | Where-Object -FilterScript {($_.BusType -Eq "iSCSI") -and ($_.IsOffline -Eq $True)} | Get-IscsiSession | Get-IscsiTarget | Disconnect-IscsiTarget -Confirm:$false
+```
 
 
 ## Deleting a drive array via the CLI
-To delete a drive array use:
-
+To delete a drive array use
 ```bash
 metalcloud-cli drive-array delete -id 47859
 ```
 
+## Disable indexing on a drive in Powershell
+
+To disable indexing on a drive, you must first create a function
+```bash
+function Disable-Indexing{
+Param($Drive)
+$obj = Get-WmiObject -Class Win32_Volume -Filter "DriveLetter='$Drive'"
+$indexing = $obj.IndexingEnabled
+if("$indexing" -eq $True){
+write-host "Disabling indexing of drive $Drive"
+$obj | Set-WmiInstance -Arguments @{IndexingEnabled=$False} | Out-Null
+}
+}
+```
+
+To save as a function
+Go to C:\Program Files\WindowsPowerShell\Modules and create a folder called Indexing
+Save it in C:\Program Files\WindowsPowerShell\Modules\Indexing and save it as Indexing.psm1 as a script
+
+Usage
+```bash
+Disable-Indexing "d:" 
+where "d:" is the drive
+```
