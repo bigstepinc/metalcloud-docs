@@ -2,6 +2,16 @@
 
 Most iscsi related operations are automaticbut there are situations where manual intervention is necessary. This guide describes how to retrieve iscsi credentials, login into targets, format drives, mount them etc.
 
+## Retrieving the drive array's connection details from the UI
+
+1. Click on on an instance array and go to the **DriveArray** tabs
+2. Select one of the drive arrays
+3. Click on **Show Drives**
+4. Scroll down to **iSCSI credentials**
+
+![](/assets/guides/managing_drive_arrays3.png)
+
+
 ## Retriving iscsi access credentials using the CLI
 
 Typically drive arrays that are part of the same target as other drives that are mounted in the operating system automatically. However if you need to manually mount a drive use the following:
@@ -158,13 +168,6 @@ Get-Disk | Where-Object IsBoot -Eq $False | Set-Disk -IsOffline $True
 Disconnect iSCSI connection of offline disk 
 ```bash
 Get-Disk | Where-Object -FilterScript {($_.BusType -Eq "iSCSI") -and ($_.IsOffline -Eq $True)} | Get-IscsiSession | Get-IscsiTarget | Disconnect-IscsiTarget -Confirm:$false
-```
-
-
-## Deleting a drive array via the CLI
-To delete a drive array use
-```bash
-metalcloud-cli drive-array delete -id 47859
 ```
 
 ## Disable indexing on a drive in Powershell

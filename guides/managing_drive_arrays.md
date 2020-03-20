@@ -17,15 +17,6 @@ There are multiple was to create a drive array from the **Infrastructure Editor*
 
 ![](/assets/guides/managing_drive_arrays2.png)
 
-## Retrieving the drive array's connection details from the UI
-
-1. Click on on an instance array and go to the **DriveArray** tabs
-2. Select one of the drive arrays
-3. Click on **Show Drives**
-4. Scroll down to **iSCSI credentials**
-
-![](/assets/guides/managing_drive_arrays3.png)
-
 ## Creating a drive array using the CLI
 
 ```bash
