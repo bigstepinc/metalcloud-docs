@@ -110,9 +110,9 @@ Prices for data transfer depend on the destination of the transfer.
 +------------------------------------------------------------+----------------+---------------+---------------+
 | Traffic type                                               | Euro           | GBP           | USD           |
 +============================================================+================+===============+===============+
-| **egress** (from the Metalcloud to the internet)           |  {{ networks["upload"]["price_EUR"]|format_eur }}/ip | {{ networks["upload"]["price_GBP"]|format_gbp }}/ip | {{ networks["upload"]["price_USD"]|format_usd }}/ip |
+| **egress** (from the Metalcloud to the internet)           |  {{ networks["upload"]["price_EUR"]|format_eur }}/GB | {{ networks["upload"]["price_GBP"]|format_gbp }}/GB | {{ networks["upload"]["price_USD"]|format_usd }}/GB |
 +------------------------------------------------------------+----------------+---------------+---------------+
-| **ingress** (from the internet to the Metalcloud)          |  {{ networks["download"]["price_EUR"]|format_eur }}/ip | {{ networks["download"]["price_GBP"]|format_gbp }}/ip | {{ networks["download"]["price_USD"]|format_usd }}/ip |
+| **ingress** (from the internet to the Metalcloud)          |  {{ networks["download"]["price_EUR"]|format_eur }}/GB | {{ networks["download"]["price_GBP"]|format_gbp }}/GB | {{ networks["download"]["price_USD"]|format_usd }}/GB |
 +------------------------------------------------------------+----------------+---------------+---------------+
-| **inter-datacenter** (between two Metalcloud datacenters)  |  {{ networks["datacenter"]["price_EUR"]|format_eur }}/ip | {{ networks["datacenter"]["price_GBP"]|format_gbp }}/ip | {{ networks["datacenter"]["price_USD"]|format_usd }}/ip |
+| **inter-datacenter** (between two Metalcloud datacenters)  |  {{ networks["datacenter"]["price_EUR"]|format_eur }}/GB | {{ networks["datacenter"]["price_GBP"]|format_gbp }}/GB | {{ networks["datacenter"]["price_USD"]|format_usd }}/GB |
 +------------------------------------------------------------+----------------+---------------+---------------+
