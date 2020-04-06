@@ -33,8 +33,6 @@ Metalcloud bare metal instances allow for on-demand consumtion. They can be prov
 +--------------------+--------------+--------------+--------------+
 |**M.8.32.2N**       |      €0.46/h |      £0.41/h |      $0.49/h |
 +--------------------+--------------+--------------+--------------+
-|**M.8.32.2**        |      €0.00/h |      £0.00/h |      $0.00/h |
-+--------------------+--------------+--------------+--------------+
 |**M.8.32.v2**       |      €0.30/h |      £0.26/h |      $0.32/h |
 +--------------------+--------------+--------------+--------------+
 |**M.24.96**         |      €0.60/h |      £0.60/h |      $0.67/h |
@@ -67,12 +65,13 @@ Metalcloud bare metal instances allow for on-demand consumtion. They can be prov
 +--------------------+--------------+--------------+--------------+
 
 
-If no reservations or packages are applied instances are priced depending on their utilization. Utilization is metered on a per second basis but the prices are displayed per hour. Metering starts from the moment a server is allocated to an instance and is stopped when it is stopped or deleted. The time the instance was allocated to a user ("ACTIVE" state) is charged at the end of the billing cycle typically 1 month.
+If no rezervations or packages are applied instances priced depending on their utilization. Utilization is metered on a per second basis but the prices are displayed per hour. Metering starts from the moment a server is allocated to an instance and is stopped when it is stopped or deleted. The time the instance was allocated to a user ("ACTIVE" state) is charged at the end of the billing cycle typically 1 month.
 
 Reservation pricing
 -------------------
 
 Reservations will overrride on-demand prices for matching instances and are up to 40% lower than on-demand pricing making them suitable for more predictible scenarios.
+
 
 +--------------------+----------------+----------------+----------------+
 |Instance            |Euro            |GBP             |USD             |
@@ -84,8 +83,6 @@ Reservations will overrride on-demand prices for matching instances and are up t
 |**M.8.32**          |    €156.00/mth |    £144.00/mth |    $170.00/mth |
 +--------------------+----------------+----------------+----------------+
 |**M.8.32.2N**       |    €285.00/mth |    £250.00/mth |    $300.00/mth |
-+--------------------+----------------+----------------+----------------+
-|**M.8.32.2**        |      €0.00/mth |      £0.00/mth |      $0.00/mth |
 +--------------------+----------------+----------------+----------------+
 |**M.8.32.v2**       |    €189.00/mth |    £165.00/mth |    $199.00/mth |
 +--------------------+----------------+----------------+----------------+
@@ -134,6 +131,8 @@ Storage pricing
 
 For a typical 720 hour month the pricing of the various storage options is as follows:
 
+Reservations will overrride on-demand prices for matching instances and are up to 40% lower than on-demand pricing making them suitable for more predictible scenarios.
+
 +---------------------------+---------------+---------------+---------------+
 |Storage type               |Euro           |GBP            |USD            |
 +===========================+===============+===============+===============+
@@ -144,7 +143,9 @@ For a typical 720 hour month the pricing of the various storage options is as fo
 |**Data Lake**              |      €0.03/GB |      £0.02/GB |      $0.03/GB |
 +---------------------------+---------------+---------------+---------------+
 
+
 If the duration is smaller than 720 hours the charge will be proportional. SharedDrive prices are the same as regular Drives.
+
 
 IP space pricing
 ===================
