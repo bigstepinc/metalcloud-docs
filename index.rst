@@ -36,6 +36,7 @@ The Bigstep Metalcloud is an IaaS service focused on offering low latency and hi
 
    advanced/creating_an_iscsi_os_template
    advanced/manually_managing_iscsi_connections
+   advanced/enabling_two_factor_authentication
    
 
 Additional resources
