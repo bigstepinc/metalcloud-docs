@@ -8,6 +8,8 @@ The Bigstep Metalcloud is an IaaS service focused on offering low latency and hi
 * Quick hardware change
 * Variable storage size
 
+To jump right use visit our [Getting Started Guide](/general/getting_started).
+
 ## Important concepts
 
 A typical user infrastructre architecture would look similar to this:
@@ -57,3 +59,10 @@ Instances have associated "Drives" and "Networks". Drives can be moved across st
 Instances can be "stopped" which will release the server to the pool but will keep all other configurations such as server type, network, OS, firewall configurations etc.
 
 >The Metalcloud supports installing the OS on a local drive. When releasing the server associated with an instance the content of all local drives will be wiped.
+
+Where to go from here:
+1. [A short 5 minute introductory video](https://www.youtube.com/watch?v=vcVxZgc82D0&t=8s)
+2. [Getting Started Guide](/general/getting_started)
+3. [Managing infrastructures](/guides/managing_infrastructures)
+4. [Managing instance arrays](/guides/managing_instance_arrays)
+
