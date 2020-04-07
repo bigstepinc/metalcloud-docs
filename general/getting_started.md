@@ -1,7 +1,8 @@
 # Getting started with the Metal Cloud
 
-This is how Servers This is often the very first step in using the Metal Cloud.
-Make sure you have created an account with us by signing up [here](http://bigstep.com)
+Metalcloud is very easy to operate but it does have some unique concepts. This short introductory tutorial will walk you through deploying a server and retrieving access credentials while also explaining the various Metalcloud concepts.
+
+Before you start make sure you have created an account with us by signing up [here](https://my.bigstep.com/en/signup?redirect_url=https://cloud.bigstep.com/en/infrastructure/diagram)
 
 ### Creating an instance array using the Infrastructure Editor
 
@@ -52,6 +53,6 @@ In the MetalCloud servers (called **Instances**) are groupped in **InstanceArray
     >Note: It is recommended that you register your public SSH key in the **Account settings** section so that it gets automatically added on the hosts at deploy time.
 
 Where to go from here:
-
-1. [Managing infrastructures](/guides/managing_infrastructures)
-2. [Managing instance arrays](/guides/managing_instance_arrays)
+1. [A short 5 minute introductory video](https://www.youtube.com/watch?v=vcVxZgc82D0&t=8s)
+2. [Managing infrastructures](/guides/managing_infrastructures)
+3. [Managing instance arrays](/guides/managing_instance_arrays)
