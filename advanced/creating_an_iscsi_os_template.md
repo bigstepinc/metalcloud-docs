@@ -11,7 +11,7 @@ This tutorial uses the CLI. Visit [using the CLI](/guides/using_the_cli) for mor
 1. List available templates
 
 	```bash
-	$ metalcloud-cli volume_template list
+	$ metalcloud-cli volume-template list
 	Volume templates I have access to as user alex.d@d.com:
 	+-------+-----------------------------------------+----------------------------------+-------+---------------------------+-----------+
 	| ID    | LABEL                                   | NAME                             | SIZE  | STATUS                    | FLAGS     |
