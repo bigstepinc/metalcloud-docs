@@ -2,7 +2,7 @@
 
 [![Documentation Status](https://readthedocs.com/projects/metalsoft-metalcloud/badge/?version=latest&token=78a1dbdaa78397a8f32f7cf0043bb9b9dbbfd80d626613482bfe49eee6e950e1)](https://metalsoft-metalcloud.readthedocs-hosted.com/en/latest/?badge=latest)
 
-This documentation uses markdown and, where tables are needed reStructuredText. Out of the markdown is used Sphinx as a build engine to generate html, table of contents, search indexes etc. 
+This documentation uses markdown and, where tables are needed reStructuredText. Sphinx is used  as a build engine to generate html, table of contents, search indexes etc. 
 
 It also includes python code that generates some portions of the documentation(prices and server_types pages)
 
