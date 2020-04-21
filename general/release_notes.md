@@ -5,7 +5,7 @@ This is a minor release that was focused on improving usability. Here are the hi
 
 1. **New instance array create form**
 
-    This new form is not just easier to understand for new users but also supports local install better. Moving forward the templates will be depending on the server type selected meaning some templates, especially Windows templates which are hardware dependent will only be available to some server types and this form supports this approach. This will avoid some corner cases where specific hardware are incopatible with certain templates and the user was allowed to proceed with the deploy.
+    This new form is not just easier to understand for new users but also supports local install better. Moving forward the templates will be depending on the server type selected meaning some templates, especially Windows templates which are hardware dependent will only be available to some server types and this form supports this approach. This will avoid some corner cases where specific hardware are incompatible with certain templates and the user was allowed to proceed with the deploy.
 
 2. **New GPU Instances**
 
