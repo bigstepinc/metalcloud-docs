@@ -1,4 +1,4 @@
-# Creating an iSCSI OS template
+# Creating a custom iSCSI OS template
 
 Custom iSCSI templates allow users to build their own images. Typically a user would start from a standard Metalcloud template and modify it:
 
