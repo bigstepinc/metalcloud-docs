@@ -11,7 +11,7 @@ This tutorial uses the CLI. Visit [using the CLI](/guides/using_the_cli) for mor
 1. List available templates
 
 	```bash
-	$ metalcloud-cli volume_template list
+	$ metalcloud-cli volume-template list
 	Volume templates I have access to as user alex.d@d.com:
 	+-------+-----------------------------------------+----------------------------------+-------+---------------------------+-----------+
 	| ID    | LABEL                                   | NAME                             | SIZE  | STATUS                    | FLAGS     |
@@ -28,7 +28,7 @@ This tutorial uses the CLI. Visit [using the CLI](/guides/using_the_cli) for mor
 
 
 	```bash
-	$ metalcloud-cli  instance-array create -boot pxe-iscsi -firewall-management-disabled -infra demo -instance-count 1 -label gold
+	$ metalcloud-cli  instance-array create -boot pxe_iscsi -firewall-management-disabled -infra demo -instance-count 1 -label gold
 	```
 3. Add a drive array to the instance
 
@@ -74,7 +74,7 @@ This tutorial uses the CLI. Visit [using the CLI](/guides/using_the_cli) for mor
 1. Create a template from the first drive
 
 	```bash
-	$ metalcloud-cli volume-template create  -id 74270 -boot-methods-supported pxe-iscsi -boot-type hybrid -label "centos7.1-custom" -description "Custom 7.1 template" -name "Custom Centos 7.1"
+	$ metalcloud-cli volume-template create  -id 74270 -boot-methods-supported pxe_iscsi -boot-type hybrid -label "centos7.1-custom" -description "Custom 7.1 template" -name "Custom Centos 7.1"
 	```
 
 	The "create volume_template" operation takes the following arguments:
