@@ -9,10 +9,28 @@ It also includes python code that generates some portions of the documentation(p
 
 ## Installing pre-requisites
 
+To build the sources you need `python 3.x` and `pip`. These are platform dependent.  Here are some resources but there are countless others out there.
+
+1. [Installing python on windows](https://docs.python.org/3/using/windows.html)
+2. [Installing python on ubuntu](https://linuxize.com/post/how-to-install-python-3-7-on-ubuntu-18-04/)
+3. [Installing pip on ubuntu](https://linuxize.com/post/how-to-install-pip-on-ubuntu-18.04/)
+
+
 To install sphinx and markdown support for it (python 3.x recommended):
 
 ```bash
-pip install sphinx recommonmark jinja2
+$ pip install sphinx recommonmark jinja2
+```
+
+## Pulling the sources locally
+
+While you can simply edit the files online using github's editor it is recommended that you sync the repository locally and use a better editor such as Visual Studio Code to edit the files. VS Code has a markdown extension that enables live preview. 
+
+To pull the sources locally you need `git`. 
+1. [Installing git](https://git-scm.com/download)
+
+```bash
+git clone git@github.com:bigstepinc/metalcloud-docs.git
 ```
 
 ## Generating the documentation manually
@@ -21,11 +39,11 @@ Note that you do not need to do this to update the live documentation, as that w
 
 However, it is very useful to generate the documentation locally in order to view it before updating it as this also performs a validation of broken links, corrupted media etc.
 
->Note: The default theme used for local generation will be different than the one used by read-the-docs so the documentation will look different but the functionality should be the same.
-
 ```bash
-make html
+$ make html
 ```
+
+>Note: The default theme used for local generation will be different than the one used by read-the-docs so the documentation will look different but the functionality should be the same.
 
 ## Steps for creating an article
 
@@ -45,16 +63,22 @@ reference in a `.. toctree::` section without the (.md or .rst) suffix: `advance
 
 ## Updating the documentation
 
+To review the changes you made:
+
+```bash
+$ git status
+```
+
 To update the documentation simply add the file to git:
 
 ```bash
-git pull
-git add .
-git commit -m "meaningful commig message"
-git push
+$ git pull
+$ git add .
+$ git commit -m "meaningful commig message"
+$ git push
 ```
 
-This should trigger the build automatically.
+This will trigger the build and will perform a release automatically.
 
 ##  When to use ReStructuredText format (.rst)
 ReStructuredText is only for the index page and pages that need to hold tables as for some reason tables are not supported by the markdown parser that sphinx uses.
