@@ -30,7 +30,7 @@ This report shows the exact utilization of each on-demand asset. Instances can b
 
 If a server configuration has changed at any given time there will be separate lines for the same instance name. 
 
-# Viewing server subscriptions (reservations)
+## Viewing server subscriptions (reservations)
 
 To view which **Subscriptions** apply click on the **Utilization Report** (infrastructure Editor > Billing > Utilization report) and then on the **Server Subscriptions**. (infrastructure Editor > Billing > Utilization report> Server Subscriptions)
 
