@@ -1,6 +1,11 @@
 # Introduction
 
-The Bigstep Metalcloud is an IaaS service focused on offering low latency and high performance compute and storage services. The service offers the same level of flexibility that is typical from a cloud provider but using only bare metal:
+The Bigstep Metalcloud is an IaaS service focused on offering low latency and high performance compute and storage services. 
+
+![](/assets/bigstep-logo.svg)
+
+
+The service offers the same level of flexibility that is typical from a cloud provider but using only bare metal:
 
 * Instant Provisioning
 * Stop-and-resume

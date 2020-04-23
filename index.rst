@@ -3,10 +3,16 @@
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
+
+
 Welcome to Metalcloud's documentation!
 ====================================================
 
-The Bigstep Metalcloud is an IaaS service focused on offering low latency and high performance compute and storage services. The service offers the same level of flexibility that is typical from a cloud provider but using only bare metal.
+The Bigstep Metalcloud is an IaaS service focused on offering low latency and high performance compute and storage services.  The service offers the same level of flexibility that is typical from a cloud provider but using only bare metal.
+
+.. image:: /assets/bigstep-logo.svg
+   :align: left
+   :width: 100
 
 .. toctree::
    :maxdepth: 2
