@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns:xl="http://www.w3.org/1999/xlink" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:dc="http://purl.org/dc/elements/1.1/" viewBox="90 101 554 504" width="554" height="504">
+  <defs>
+    <font-face font-family="Helvetica Neue" font-size="16" panose-1="2 0 8 3 0 0 0 9 0 4" units-per-em="1000" underline-position="-100" underline-thickness="50" slope="0" x-height="517" cap-height="714" ascent="975.0061" descent="-216.99524" font-weight="700">
+      <font-face-src>
+        <font-face-name name="HelveticaNeue-Bold"/>
+      </font-face-src>
+    </font-face>
+    <font-face font-family="Helvetica Neue" font-size="11" panose-1="2 0 8 3 0 0 0 9 0 4" units-per-em="1000" underline-position="-100" underline-thickness="50" slope="0" x-height="517" cap-height="714" ascent="975.0061" descent="-216.99524" font-weight="700">
+      <font-face-src>
+        <font-face-name name="HelveticaNeue-Bold"/>
+      </font-face-src>
+    </font-face>
+    <font-face font-family="Helvetica Neue" font-size="13" panose-1="2 0 5 3 0 0 0 2 0 4" units-per-em="1000" underline-position="-100" underline-thickness="50" slope="0" x-height="517" cap-height="714" ascent="951.9958" descent="-212.99744" font-weight="400">
+      <font-face-src>
+        <font-face-name name="HelveticaNeue"/>
+      </font-face-src>
+    </font-face>
+    <font-face font-family="Helvetica Neue" font-size="10" panose-1="2 0 8 3 0 0 0 9 0 4" units-per-em="1000" underline-position="-100" underline-thickness="50" slope="0" x-height="517" cap-height="714" ascent="975.0061" descent="-216.99524" font-weight="700">
+      <font-face-src>
+        <font-face-name name="HelveticaNeue-Bold"/>
+      </font-face-src>
+    </font-face>
+    <font-face font-family="Helvetica Neue" font-size="16" panose-1="2 0 5 3 0 0 0 2 0 4" units-per-em="1000" underline-position="-100" underline-thickness="50" slope="0" x-height="517" cap-height="714" ascent="951.9958" descent="-212.99744" font-weight="400">
+      <font-face-src>
+        <font-face-name name="HelveticaNeue"/>
+      </font-face-src>
+    </font-face>
+    <font-face font-family="Helvetica Neue" font-size="16" panose-1="2 0 5 3 0 0 0 9 0 4" units-per-em="1000" underline-position="-100" underline-thickness="50" slope="-750" x-height="517" cap-height="714" ascent="957.0007" descent="-212.99744" font-style="italic" font-weight="400">
+      <font-face-src>
+        <font-face-name name="HelveticaNeue-Italic"/>
+      </font-face-src>
+    </font-face>
+    <font-face font-family="Helvetica Neue" font-size="14" panose-1="2 0 5 3 0 0 0 2 0 4" units-per-em="1000" underline-position="-100" underline-thickness="50" slope="0" x-height="517" cap-height="714" ascent="951.9958" descent="-212.99744" font-weight="400">
+      <font-face-src>
+        <font-face-name name="HelveticaNeue"/>
+      </font-face-src>
+    </font-face>
+    <marker orient="auto" overflow="visible" markerUnits="strokeWidth" id="FilledArrow_Marker" stroke-linejoin="miter" stroke-miterlimit="10" viewBox="-1 -4 10 8" markerWidth="10" markerHeight="8" color="black">
+      <g>
+        <path d="M 8 0 L 0 -3 L 0 3 Z" fill="currentColor" stroke="currentColor" stroke-width="1"/>
+      </g>
+    </marker>
+    <font-face font-family="Helvetica Neue" font-size="12" panose-1="2 0 5 3 0 0 0 2 0 4" units-per-em="1000" underline-position="-100" underline-thickness="50" slope="0" x-height="517" cap-height="714" ascent="951.9958" descent="-212.99744" font-weight="400">
+      <font-face-src>
+        <font-face-name name="HelveticaNeue"/>
+      </font-face-src>
+    </font-face>
+    <font-face font-family="Helvetica Neue" font-size="10" panose-1="2 0 5 3 0 0 0 2 0 4" units-per-em="1000" underline-position="-100" underline-thickness="50" slope="0" x-height="517" cap-height="714" ascent="951.9958" descent="-212.99744" font-weight="400">
+      <font-face-src>
+        <font-face-name name="HelveticaNeue"/>
+      </font-face-src>
+    </font-face>
+  </defs>
+  <metadata> Produced by OmniGraffle 7.15 
+    <dc:date>2020-04-23 11:09:28 +0000</dc:date>
+  </metadata>
+  <g id="Canvas_6" fill="none" stroke-dasharray="none" stroke-opacity="1" fill-opacity="1" stroke="none">
+    <title>Canvas 6</title>
+    <g id="Canvas_6: Layer 1">
+      <title>Layer 1</title>
+      <g id="Graphic_3">
+        <rect x="489.5" y="102" width="154" height="134.5" fill="white"/>
+        <rect x="489.5" y="102" width="154" height="134.5" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+        <text transform="translate(494.5 104.71635)" fill="black">
+          <tspan font-family="Helvetica Neue" font-size="16" font-weight="700" fill="black" x="21.936" y="16">Reseller OPS </tspan>
+          <tspan font-family="Helvetica Neue" font-size="16" font-weight="700" fill="black" x="41.032" y="35.46411">account</tspan>
+          <tspan font-family="Helvetica Neue" font-size="11" font-weight="700" fill="black" x="25.9595" y="49.92822">ops@reseller.com</tspan>
+          <tspan font-family="Helvetica Neue" font-size="13" font-weight="400" fill="#009896" x="6.753" y="64.2473">infrastructure delegate </tspan>
+          <tspan font-family="Helvetica Neue" font-size="13" font-weight="400" fill="#009896" x="62.848" y="79.6113">on:</tspan>
+          <tspan font-family="Helvetica Neue" font-size="13" font-weight="400" fill="#009896" x="32.272" y="94.9753">-client1 infra1</tspan>
+          <tspan font-family="Helvetica Neue" font-size="13" font-weight="400" fill="#009896" x="32.272" y="110.3393">-client1 infra2</tspan>
+          <tspan font-family="Helvetica Neue" font-size="13" font-weight="400" fill="#009896" x="32.272" y="125.7033">-client1 infra3</tspan>
+        </text>
+      </g>
+      <g id="Graphic_4">
+        <rect x="90.5" y="469.5" width="154" height="134.5" fill="white"/>
+        <rect x="90.5" y="469.5" width="154" height="134.5" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+        <text transform="translate(95.5 477.3238)" fill="black">
+          <tspan font-family="Helvetica Neue" font-size="16" font-weight="700" fill="black" x="33.056" y="16">End-client </tspan>
+          <tspan font-family="Helvetica Neue" font-size="16" font-weight="700" fill="black" x="30.224" y="35.46411">company 1</tspan>
+          <tspan font-family="Helvetica Neue" font-size="10" font-weight="700" fill="#02630a" x="22.64" y="48.92822">ops@company1.com</tspan>
+          <tspan font-family="Helvetica Neue" font-size="10" font-weight="700" fill="#0029ff" x="37.02" y="61.21829">billing account</tspan>
+          <tspan font-family="Helvetica Neue" font-size="16" font-weight="400" fill="black" x="35.864" y="78.50836">owner for:</tspan>
+          <tspan font-family="Helvetica Neue" font-size="16" font-style="italic" font-weight="400" fill="black" x="21.024" y="96.95636">- client1 infra1</tspan>
+          <tspan font-family="Helvetica Neue" font-size="16" font-style="italic" font-weight="400" fill="black" x="21.024" y="115.40436">- client1 infra2</tspan>
+        </text>
+      </g>
+      <g id="Graphic_5">
+        <rect x="90.5" y="335" width="154" height="66" fill="#ccc"/>
+        <rect x="90.5" y="335" width="154" height="66" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+        <text transform="translate(95.5 350.07195)" fill="black">
+          <tspan font-family="Helvetica Neue" font-size="16" font-weight="700" fill="black" x="21.496" y="16">Client1 infra1</tspan>
+          <tspan font-family="Helvetica Neue" font-size="14" font-weight="400" fill="black" x="27.914" y="32.46411">- server 1-100</tspan>
+        </text>
+      </g>
+      <g id="Line_9">
+        <line x1="489.5" y1="207.60526" x2="242.61054" y2="330.5859" marker-end="url(#FilledArrow_Marker)" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+      </g>
+      <g id="Graphic_11">
+        <rect x="290" y="335" width="154" height="66" fill="#ccc"/>
+        <rect x="290" y="335" width="154" height="66" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+        <text transform="translate(295 351.09995)" fill="black">
+          <tspan font-family="Helvetica Neue" font-size="16" font-weight="700" fill="black" x="21.496" y="16">Client1 infra2</tspan>
+          <tspan font-family="Helvetica Neue" font-size="12" font-weight="400" fill="black" x="24.54" y="30.46411">- servers 100-200</tspan>
+        </text>
+      </g>
+      <g id="Graphic_12">
+        <rect x="489.5" y="335" width="154" height="66" fill="#ccc"/>
+        <rect x="489.5" y="335" width="154" height="66" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+        <text transform="translate(494.5 350.58595)" fill="black">
+          <tspan font-family="Helvetica Neue" font-size="16" font-weight="700" fill="black" x="17.048" y="16">Client 2 infra 1</tspan>
+          <tspan font-family="Helvetica Neue" font-size="13" font-weight="400" fill="black" x="20.585" y="31.46411">- servers 300-500</tspan>
+        </text>
+      </g>
+      <g id="Line_17">
+        <line x1="167.5" y1="469.5" x2="167.5" y2="410.9" marker-end="url(#FilledArrow_Marker)" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+      </g>
+      <g id="Graphic_27">
+        <rect x="146.76" y="420.8482" width="41.48" height="34.559998" fill="white"/>
+        <text transform="translate(151.76 425.8482)" fill="#009c08">
+          <tspan font-family="Helvetica Neue" font-size="10" font-weight="400" fill="#009c08" x="7.59" y="10">can</tspan>
+          <tspan font-family="Helvetica Neue" font-size="10" font-weight="400" fill="#009c08" x="0" y="22.28">access</tspan>
+        </text>
+      </g>
+      <g id="Graphic_31">
+        <rect x="489.5" y="475.4338" width="154" height="128.56618" fill="white"/>
+        <rect x="489.5" y="475.4338" width="154" height="128.56618" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+        <text transform="translate(494.5 489.51473)" fill="black">
+          <tspan font-family="Helvetica Neue" font-size="16" font-weight="700" fill="black" x="33.056" y="16">End-client </tspan>
+          <tspan font-family="Helvetica Neue" font-size="16" font-weight="700" fill="black" x="30.224" y="35.46411">company 2</tspan>
+          <tspan font-family="Helvetica Neue" font-size="10" font-weight="700" fill="#02630a" x="22.64" y="48.92822">ops@company2.com</tspan>
+          <tspan font-family="Helvetica Neue" font-size="10" font-weight="700" fill="#0029ff" x="37.02" y="61.21829">billing account</tspan>
+          <tspan font-family="Helvetica Neue" font-size="16" font-weight="400" fill="black" x="35.864" y="78.50836">owner for:</tspan>
+          <tspan font-family="Helvetica Neue" font-size="16" font-style="italic" font-weight="400" fill="black" x="16.576" y="96.95636">- client 2 infra 2</tspan>
+        </text>
+      </g>
+      <g id="Line_32">
+        <line x1="566.5" y1="475.4338" x2="566.5" y2="410.9" marker-end="url(#FilledArrow_Marker)" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+      </g>
+      <g id="Graphic_33">
+        <rect x="545.76" y="415.5937" width="41.48" height="34.559998" fill="white"/>
+        <text transform="translate(550.76 420.5937)" fill="#009c08">
+          <tspan font-family="Helvetica Neue" font-size="10" font-weight="400" fill="#009c08" x="7.59" y="10">can</tspan>
+          <tspan font-family="Helvetica Neue" font-size="10" font-weight="400" fill="#009c08" x="0" y="22.28">access</tspan>
+        </text>
+      </g>
+      <g id="Graphic_38">
+        <rect x="406.7943" y="221.19163" width="41.48" height="34.559998" fill="white"/>
+        <text transform="translate(411.7943 226.19163)" fill="#009796">
+          <tspan font-family="Helvetica Neue" font-size="10" font-weight="400" fill="#009796" x="7.59" y="10">can</tspan>
+          <tspan font-family="Helvetica Neue" font-size="10" font-weight="400" fill="#009796" x="0" y="22.28">access</tspan>
+        </text>
+      </g>
+      <g id="Line_39">
+        <line x1="498.9962" y1="236.5" x2="407.13806" y2="328.01284" marker-end="url(#FilledArrow_Marker)" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+      </g>
+      <g id="Line_40">
+        <line x1="566.5" y1="236.5" x2="566.5" y2="325.1" marker-end="url(#FilledArrow_Marker)" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+      </g>
+      <g id="Graphic_41">
+        <rect x="431.8465" y="265.45526" width="41.48" height="34.559998" fill="white"/>
+        <text transform="translate(436.8465 270.45526)" fill="#009796">
+          <tspan font-family="Helvetica Neue" font-size="10" font-weight="400" fill="#009796" x="7.59" y="10">can</tspan>
+          <tspan font-family="Helvetica Neue" font-size="10" font-weight="400" fill="#009796" x="0" y="22.28">access</tspan>
+        </text>
+      </g>
+      <g id="Graphic_43">
+        <rect x="545.76" y="268.48346" width="41.48" height="34.559998" fill="white"/>
+        <text transform="translate(550.76 273.48346)" fill="#009796">
+          <tspan font-family="Helvetica Neue" font-size="10" font-weight="400" fill="#009796" x="7.59" y="10">can</tspan>
+          <tspan font-family="Helvetica Neue" font-size="10" font-weight="400" fill="#009796" x="0" y="22.28">access</tspan>
+        </text>
+      </g>
+      <g id="Line_46">
+        <line x1="244.5" y1="471.6184" x2="320.42806" y2="407.39355" marker-end="url(#FilledArrow_Marker)" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+      </g>
+      <g id="Graphic_47">
+        <rect x="271.25744" y="414.162" width="41.48" height="34.559998" fill="white"/>
+        <text transform="translate(276.25744 419.162)" fill="#009c08">
+          <tspan font-family="Helvetica Neue" font-size="10" font-weight="400" fill="#009c08" x="7.59" y="10">can</tspan>
+          <tspan font-family="Helvetica Neue" font-size="10" font-weight="400" fill="#009c08" x="0" y="22.28">access</tspan>
+        </text>
+      </g>
+    </g>
+  </g>
+</svg>

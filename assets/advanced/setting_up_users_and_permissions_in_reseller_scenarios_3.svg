@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns:xl="http://www.w3.org/1999/xlink" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:dc="http://purl.org/dc/elements/1.1/" viewBox="235 261 468 37" width="468" height="37">
+  <defs>
+    <font-face font-family="Helvetica Neue" font-size="16" panose-1="2 0 5 3 0 0 0 2 0 4" units-per-em="1000" underline-position="-100" underline-thickness="50" slope="0" x-height="517" cap-height="714" ascent="951.9958" descent="-212.99744" font-weight="400">
+      <font-face-src>
+        <font-face-name name="HelveticaNeue"/>
+      </font-face-src>
+    </font-face>
+    <marker orient="auto" overflow="visible" markerUnits="strokeWidth" id="FilledArrow_Marker" stroke-linejoin="miter" stroke-miterlimit="10" viewBox="-1 -4 10 8" markerWidth="10" markerHeight="8" color="black">
+      <g>
+        <path d="M 8 0 L 0 -3 L 0 3 Z" fill="currentColor" stroke="currentColor" stroke-width="1"/>
+      </g>
+    </marker>
+    <font-face font-family="Helvetica Neue" font-size="11" panose-1="2 0 5 3 0 0 0 2 0 4" units-per-em="1000" underline-position="-100" underline-thickness="50" slope="0" x-height="517" cap-height="714" ascent="951.9958" descent="-212.99744" font-weight="400">
+      <font-face-src>
+        <font-face-name name="HelveticaNeue"/>
+      </font-face-src>
+    </font-face>
+  </defs>
+  <metadata> Produced by OmniGraffle 7.15 
+    <dc:date>2020-04-23 10:44:26 +0000</dc:date>
+  </metadata>
+  <g id="Canvas_4" fill="none" stroke-dasharray="none" stroke-opacity="1" fill-opacity="1" stroke="none">
+    <title>Canvas 4</title>
+    <g id="Canvas_4: Layer 1">
+      <title>Layer 1</title>
+      <g id="Graphic_2">
+        <rect x="235.5" y="262.5" width="79" height="34" fill="white"/>
+        <rect x="235.5" y="262.5" width="79" height="34" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+        <text transform="translate(240.5 270.276)" fill="black">
+          <tspan font-family="Helvetica Neue" font-size="16" font-weight="400" fill="black" x="7.092" y="15">Bigstep</tspan>
+        </text>
+      </g>
+      <g id="Graphic_3">
+        <rect x="623.5" y="262.5" width="79" height="34" fill="white"/>
+        <rect x="623.5" y="262.5" width="79" height="34" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+        <text transform="translate(628.5 261.052)" fill="black">
+          <tspan font-family="Helvetica Neue" font-size="16" font-weight="400" fill="black" x="17.308" y="15">End-</tspan>
+          <tspan font-family="Helvetica Neue" font-size="16" font-weight="400" fill="black" x="15.388" y="33.448">client</tspan>
+        </text>
+      </g>
+      <g id="Graphic_4">
+        <rect x="424.5" y="262.5" width="79" height="34" fill="white"/>
+        <rect x="424.5" y="262.5" width="79" height="34" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+        <text transform="translate(429.5 270.276)" fill="black">
+          <tspan font-family="Helvetica Neue" font-size="16" font-weight="400" fill="black" x="5.916" y="15">Reseller</tspan>
+        </text>
+      </g>
+      <g id="Line_5">
+        <line x1="314.5" y1="279.5" x2="414.6" y2="279.5" marker-end="url(#FilledArrow_Marker)" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+      </g>
+      <g id="Line_6">
+        <line x1="503.5" y1="279.5" x2="613.6" y2="279.5" marker-end="url(#FilledArrow_Marker)" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+      </g>
+      <g id="Graphic_11">
+        <rect x="532.609" y="262.192" width="52.174" height="34.615997" fill="white"/>
+        <text transform="translate(537.609 267.192)" fill="black">
+          <tspan font-family="Helvetica Neue" font-size="11" font-weight="400" fill="black" x="0" y="10">provides</tspan>
+          <tspan font-family="Helvetica Neue" font-size="11" font-weight="400" fill="black" x=".924" y="22.307999">services</tspan>
+        </text>
+      </g>
+      <g id="Graphic_12">
+        <rect x="337.49914" y="262.192" width="52.174" height="34.615997" fill="white"/>
+        <text transform="translate(342.49914 267.192)" fill="black">
+          <tspan font-family="Helvetica Neue" font-size="11" font-weight="400" fill="black" x="0" y="10">provides</tspan>
+          <tspan font-family="Helvetica Neue" font-size="11" font-weight="400" fill="black" x=".924" y="22.307999">services</tspan>
+        </text>
+      </g>
+    </g>
+  </g>
+</svg>
