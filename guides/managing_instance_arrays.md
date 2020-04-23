@@ -1,11 +1,11 @@
 # Managing instance arrays
 
-This is how Servers This is often the very first step in using the Metal Cloud.
+This is often the very first step in using the Metal Cloud.
 Make sure you have created an account with us by signing up [here](http://bigstep.com)
 
 ## Deploying an instance array using the Infrastructure Editor
 
-In the MetalCloud servers (called **Instances**) are groupped in **InstanceArrays**. By default an infrastructure is created for you called "my-infrastructure" in a datacenter geographically close to you.
+The MetalCloud servers (called **Instances**) are groupped in **InstanceArrays**. By default an infrastructure is created for you called "my-infrastructure" in a datacenter geographically close to you.
 
 1. Click on the `Create your first InstanceArray`
 
@@ -14,7 +14,7 @@ In the MetalCloud servers (called **Instances**) are groupped in **InstanceArray
 
 2. Select your configuration, number of servers, operating system, drive size and boot type. 
 
-    Certain servers types support deploying the operating system on a local drive (or a collection of local drives in an RAID 0 array). Local drives do not allow switching the server but are less expensive and carry higher capacities and, if using local NVMes higher performance.
+    Certain servers types support deploying the operating system on a local drive (or a collection of local drives in an RAID 1,5,10 array). Local drives do not allow switching the server but are less expensive and carry higher capacities and, if using local NVMes higher performance.
 
     ![](/assets/guides/getting_started5.png)
 
@@ -33,7 +33,7 @@ In the MetalCloud servers (called **Instances**) are groupped in **InstanceArray
 
 ## Retrieving server access credentials using the UI
 
-Once an infrastructure is active you can access the servers' access credentials by clicking on the instance array.
+Once an infrastructure is active you can access the server's credentials by clicking on the instance array.
 
 ![](/assets/guides/managing_instance_arrays1.png)
 
@@ -51,6 +51,8 @@ The host can be any one of the:
 1. Hosts' public ip address (89..)
 2. Hosts's permanent DNS entry: `instance-58417.bigstep.io `
 3. Host's long-form DNS entry: ` instance-58417.instance-array-37139.vanilla.my-infrastructure.8186.bigstep.io`
+
+Both of them are *Type A* DNS entries and they point to the same IP address.
 
 >Note: It is recommended that you register your public SSH key in the **Account settings** section so that it gets automatically added on the hosts at deploy time.
 
@@ -103,12 +105,13 @@ To retrive your ssh credentials use the following command:
 $ metalcloud-cli instance-array get -id gold -show-credentials
 ```
 
+## 
 
-## Checking the power status of an instance using the CLI
+## Checking the power status of all the instances in this instance array using the CLI
 
 To retrieve your instances status use:
 ```bash
-metalcloud-cli instance-array get -id workers -show-power-status
+metalcloud-cli instance-array get -id gold -show-power-status
 ```
 
 ## Rebooting an instance using the CLI

@@ -5,23 +5,34 @@ Drives are iSCSI based block devices attached to servers at runtime. They can be
 **Drive arrays** are collections of identical drives that users can control as a single entity.
 
 ## Creating a drive array using the UI
-There are multiple was to create a drive array from the **Infrastructure Editor**:
-1. Click on on an instance array and go to the **DriveArray** tabs
-2. Click on Create **DriveArray** button
+There are multiple ways to create a drive array from the **Infrastructure Editor**:
+1. Click on on an instance array and go to the **DriveArrays** tab
+2. Click on **Create DriveArray** button
 
 ![](/assets/guides/managing_drive_arrays1.png)
 
 ## Listing drive arrays of an instance array using the UI
 
-1. Click on on an instance array and go to the **DriveArray** tabs
+1. Click on on an instance array and go to the **DriveArrays** tab
 
 ![](/assets/guides/managing_drive_arrays2.png)
 
 ## Creating a drive array using the CLI
 
 ```bash
-$ metalcloud-cli drive-array create -ia gold -infra complex-demo -size 100000 -label da
+metalcloud-cli drive-array create -ia gold -infra complex-demo -size 100000 -label da
 ```
+
+In order for a drive array to be accessible you need to push the **Deploy changes** button in the UI, or run the following metalcloud-cli command:
+
+```
+metalcloud-cli infrastructure deploy -id complex-demo
+```
+or
+```
+metalcloud-cli infrastructure deploy -id complex-demo -autoconfirm
+```
+
 
 Typically drive arrays will expand with their instance array. To stop that from happening use `-no-expand-with-ia`
 
@@ -43,7 +54,7 @@ Total: 5 Drive Arrays
 
 
 ```
-
+All the drive arrays with status ordered are not yet accessible.
 
 ## Deleting a drive array via the CLI
 To delete a drive array use
