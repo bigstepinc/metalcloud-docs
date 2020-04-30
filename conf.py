@@ -17,7 +17,7 @@
 # sys.path.insert(0, os.path.abspath('.'))
 
 project = u'Metalcloud'
-copyright = u'2020, Alex Bordei'
+copyright = u'2020, Bigstep'
 author = u'Alex Bordei'
 
 # The short X.Y version
