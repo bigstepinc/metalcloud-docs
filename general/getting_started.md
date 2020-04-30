@@ -17,7 +17,7 @@ In the MetalCloud servers (called **Instances**) are groupped in **InstanceArray
     
     Select your type, number of servers, operating system, drive size and boot type. The server will not be deployed now but rather will wait for the Deploy button to be clicked. (step #5)
 
-    Certain servers types support deploying the operating system on a local drive (or a collection of local drives in an RAID 0 array). Local drives do not allow switching the server but are less expensive and carry higher capacities and, if using local NVMes higher performance.
+    Certain servers types support deploying the operating system on a local drive (or a collection of local drives in an RAID 1,5,10 array). Local drives do not allow switching the server but are less expensive and carry higher capacities and, if using local NVMes higher performance.
 
     ![](/assets/guides/getting_started5.png)
 
@@ -30,7 +30,7 @@ In the MetalCloud servers (called **Instances**) are groupped in **InstanceArray
 
 3. **Configure the firewall**
 
-    By default **all traffic is blocked**. You need to explicitly allow traffic to it. For your convenience by default the interface will enable traffic from your current IP. You need to explicitly enable additional IPs or ports before you deploy.
+    By default **all traffic is blocked**. You need to explicitly allow traffic to it. For your convenience by default the interface will enable traffic from your current public IP (assigned by your Internet Service Provider - this could be static or dynamic). You need to explicitly enable additional IPs or ports before you deploy.
 
     ![](/assets/guides/getting_started41.png)
 
