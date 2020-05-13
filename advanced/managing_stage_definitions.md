@@ -27,7 +27,9 @@ HTTP Requests stage definitions are very powerful and they provide a more or les
 Any of the fields in stage_definition, such as the URL or 'Authentication' header field can be references to variables or secrets so that the stage can be parametrized for each situation in which it is used such as Authorization or Cookie fields.
 
 ```bash
-$ metalcloud-cli new stage_def -label "vcenter-login" -title "vcenter-login" -type "HTTPRequest" -http_request_method GET -http_request_url='{{vcenter}}/rest/com/vmware/cis/session' -vars "vcenter"
+$ metalcloud-cli variable create -name "vcenter" -usage "HTTPRequest" -return-id
+
+$ metalcloud-cli stage-definition create -label "vcenter-login" -title "vcenter-login" -type "HTTPRequest" -http-request-method GET -http-request-url='${{vcenter}}/rest/com/vmware/cis/session' -vars "vcenter" -return-id
 ```
 
 #### HTTPRequest cookie jar
@@ -51,7 +53,7 @@ the variables.json file is created automatically (no need to provide one in your
 
 To create a new ansible stage using the cli:
 ```bash
-$ metalcloud-cli new stage_def -label "ansible1" -title "ansible1" -type "AnsibleBundle" -ansible_bundle_filename "/test/bundle1.zip"
+$ metalcloud-cli stage-definition create -label "ansible1" -title "ansible1" -type "AnsibleBundle" -ansible_bundle_filename "local path to the bundle zip file goes here" -return-id
 ```
  
 #### Ansible Bundle inventory file 
@@ -88,10 +90,12 @@ instance-37	ansible_ssh_user='root' ansible_ssh_host='192.168.138.132' ansible_s
 
 ### WorkflowReference stages
 
-This is an utility stage that allows an workflow to call another workflow allowying you to build a tree fo workflows.
+This is an utility stage that allows an workflow to call another workflow allowing you to build a tree of workflows.
 
 ```bash
-$ metalcloud-cli new stage_def -type WorkflowReference -title "call test workflow" -label callwf1 -workflow test
+$ metalcloud-cli workflow create -label "test" -title "example" -usage free_standing -return-id
+
+$ metalcloud-cli stage-definition create -type WorkflowReference -title "call test workflow" -label callwf1 -workflow my-test -return-id
 ```
 
 ### Listing stages
