@@ -17,7 +17,7 @@ INSTANCE_DESCRIPTION_TEMPLATE="instance_description.tmpl"
 INSTANCES_LIST_PAGE="metalcloud_instances.rst"
 INSTANCES_LIST_PAGE_TEMPLATE=INSTANCES_LIST_PAGE+".tmpl"
 
-BLACKLIST=["M.20.128", "M.10.128","M.40.384.12D","M.4.32.1G","M.40.256.v3","M.40.256.v1","M.4.16.1G","M.8.32.2"]
+BLACKLIST=["M.20.128", "M.10.128","M.40.384.12D","M.4.32.1G","M.40.256.v3","M.40.256.v1","M.8.32.2"]
 
 env = Environment(loader=FileSystemLoader(TEMPLATES_DIR))
 

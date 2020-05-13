@@ -9,6 +9,8 @@ There are several types of stage types:
 1. HTTPRequest
 2. AnsibleBundle
 3. WorkflowReference
+4. Copy file via SFTP (Copy)
+
 
 In addition we provide several out of the box stages that allow the users to build fully custom provisioning workflows.
 
