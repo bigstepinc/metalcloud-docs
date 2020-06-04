@@ -90,7 +90,7 @@ for franchise in prices.keys():
           
           currency=v["demand"]["resource_utilization_price_currency"]  
 
-          instances[instance]["on_demand_"+currency]=v["demand"]["resource_utilization_price"]
+          instances[instance]["on_demand_"+currency]=v["demand"]["resource_utilization_price"]/v["demand"]["resource_utilization_price_unit_seconds"]*3600
           instances[instance]["reservation_"+currency]=v["reservation"]["resource_reservation_price"]
 
 
