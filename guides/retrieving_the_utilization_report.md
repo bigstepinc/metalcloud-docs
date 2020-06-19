@@ -40,7 +40,7 @@ These subscriptions will override the pricing of the on-demand instances they ma
 
 ![](/assets/guides/understanding_the_utilization_report_4.png)
 
-The price will depending on the rezervation pricing in place at the time of the creation of the reservation. Rezervations are not affected by on demand pricing changes. See [Metalcloud Pricing](/general/metalcloud_pricing) for more details.
+The price will depending on the rezervation pricing in place at the time of the creation of the reservation. Rezervations are not affected by on demand pricing changes. 
 
 ## Automating chargeback or billing in reselling scenarios
 
@@ -52,7 +52,7 @@ Reffer to the [API](https://api.bigstep.com/metal-cloud#resource_utilization_sum
 
 Example detailed utilization summary json:
 
-```javascript
+```
 {
 	"detailed_report": {
 		"3668": {
