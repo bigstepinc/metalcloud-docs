@@ -1,5 +1,29 @@
 # Release notes
 
+### R4.4 - 9 July 2020
+This is a minor release that was focused on improving deploy speed and fix bugs. Here are the highlights:
+
+1. **Improve deploy speed for Windows**
+
+   This new deploy method improves boot times for Windows images and provides the fixes needed to boot the image fast.If the server is already powered up then we also added some time optimisations.
+
+2. **DC agent stability fixes and performance optimisations for very high latency networks**
+
+   We have introduced performance optimisations in very high latency environments and in environments that have 1000+ VLANs. The system is able to perform well under these 
+   special conditions and agents are able to fully manage this kind of environments. We also fixed some stability issues for DC agents triggered by the high latency environments.
+
+3. **Workflow UI improvements and improved usage reports**
+
+    We improved the Workflow UI interface with correct sort options, adding a Run now button and by adding confirmations for delete and fixing new stage form. We improved the usage reports with fixes for Windows usage.
+
+4. **Monitoring agent improvements**
+
+    The monitoring agent has a new time series database implementation that will add the ability to display additional details in the monitoring tab and will improve monitoring in general. The monitoring agent implementation was improved and the agent will be able to also add metadata to data. 
+
+5. **Subnet pools, storage pools and search API**
+
+    We added UI and API fixes to subnet pools and enhanced the storage pools create APIs. We also improved the search API functionality for all search APIs in all forms.  
+
 ### R4.1 - 21 April 2020
 This is a minor release that was focused on improving usability. Here are the highlights:
 
@@ -39,3 +63,5 @@ This is a major release that was focused on improving reliability. Here are the 
 3. **Many bug fixes and improvements**
 
     This release was focused on improving reliability and ease of use and many bugs specially around networking provisioning has been addressed.
+
+
