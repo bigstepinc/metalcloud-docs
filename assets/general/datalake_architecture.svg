@@ -1,0 +1,139 @@
+<svg width="640" height="500" xmlns="http://www.w3.org/2000/svg" xmlns:svg="http://www.w3.org/2000/svg">
+ <!-- Created with SVG-edit - http://svg-edit.googlecode.com/ -->
+  <g transform="scale(1.2)">
+ <title>Man silhouette</title>
+ <g>
+  <title>Layer 1</title>
+  <g id="svg_3" stroke="null">
+   <path fill="#231F20" d="m255.488586,308.962708c4.771759,0 8.629303,-2.765869 8.629303,-6.205597c0,-3.418427 -3.857544,-6.199127 -8.629303,-6.199127c-4.742233,0 -8.599762,2.780701 -8.599762,6.199127c0.001312,3.439728 3.858841,6.205597 8.599762,6.205597z" id="svg_1" stroke="null"></path>
+   <path fill="#231F20" d="m243.846512,369.153687c0,1.926117 2.129379,3.483276 4.801361,3.483276c2.661697,0 4.832214,-1.557159 4.832214,-3.483276l0,-29.189911l4.047836,0l0,29.189911c0,1.926117 2.170502,3.483276 4.832214,3.483276c2.671967,0 4.811646,-1.557159 4.811646,-3.483276l0.029572,-50.32785l4.01825,0l0,18.552826c0,3.736328 6.740417,3.736328 6.740417,0l0,-18.957886c0,-4.120056 -4.450317,-8.146515 -11.140564,-8.146515l-22.823776,-0.021332c-6.118057,0 -11.019699,3.591736 -11.019699,8.052917l0,19.07373c0,3.692749 6.780258,3.692749 6.780258,0l0,-18.553741l4.088989,0l0,50.32785l0.001282,0l0,0z" id="svg_2" stroke="null"></path>
+  </g>
+ </g>
+ <title>Node Metadata</title>
+ <g>
+  <title>Layer 2</title>
+  <text font-weight="bold" id="svg_16" stroke="#000000" xml:space="preserve" text-anchor="middle" font-family="Sans-serif" font-size="16" y="392" x="256" stroke-width="0" fill="#000000">client</text>
+  <g id="svg_53">
+   <g id="svg_4">
+    <rect x="14" y="39.5" id="svg_5" fill="rgb(255,255,255)" stroke-width="3" stroke="rgb(0,0,0)" height="150" width="100"></rect>
+   </g>
+   <text fill="#000000" stroke="rgb(0,0,0)" stroke-width="0" x="65" y="59.5" id="svg_7" font-size="12" font-family="Sans-serif" text-anchor="middle" xml:space="preserve">file 1 -&gt; block 1,</text>
+   <text id="svg_8" fill="#000000" stroke="rgb(0,0,0)" stroke-width="0" x="65" y="75.5" font-size="12" font-family="Sans-serif" text-anchor="middle" xml:space="preserve">block2, block10</text>
+   <text fill="#000000" stroke="rgb(0,0,0)" stroke-width="0" x="63" y="184" font-size="12" font-family="Sans-serif" text-anchor="middle" xml:space="preserve" id="svg_9">name node</text>
+   <text id="svg_10" fill="#000000" stroke="rgb(0,0,0)" stroke-width="0" x="64" y="148" font-size="12" font-family="Sans-serif" text-anchor="middle" xml:space="preserve">file 1 -&gt; block 1,</text>
+   <text id="svg_11" fill="#000000" stroke="rgb(0,0,0)" stroke-width="0" x="64" y="163" font-size="12" font-family="Sans-serif" text-anchor="middle" xml:space="preserve">block2, block10</text>
+   <text id="svg_12" fill="#000000" stroke="rgb(0,0,0)" stroke-width="0" x="63" y="102" font-size="12" font-family="Sans-serif" text-anchor="middle" xml:space="preserve">file 1 -&gt; block 1,</text>
+   <text id="svg_13" fill="#000000" stroke="rgb(0,0,0)" stroke-width="0" x="63" y="118" font-size="12" font-family="Sans-serif" text-anchor="middle" xml:space="preserve">block2, block10</text>
+   <text fill="#000000" stroke="rgb(0,0,0)" stroke-width="0" x="63" y="31" font-size="16" font-family="Sans-serif" text-anchor="middle" xml:space="preserve" id="svg_15">Node metadata</text>
+   <text fill="#000000" stroke="rgb(0,0,0)" stroke-width="0" x="58" y="133" font-size="12" font-family="Sans-serif" text-anchor="middle" xml:space="preserve" id="svg_27">...</text>
+  </g>
+  <text fill="#000000" stroke="rgb(0,0,0)" stroke-width="0" x="371" y="110.5" font-size="12" font-family="Sans-serif" text-anchor="middle" xml:space="preserve" id="svg_98" font-weight="bold">[...]</text>
+  <g id="svg_20">
+   <g id="svg_17">
+    <rect id="svg_18" x="131" y="39.5" fill="rgb(255,255,255)" stroke-width="3" stroke="rgb(0,0,0)" height="150" width="100"></rect>
+   </g>
+   <text id="svg_21" fill="#000000" stroke="rgb(0,0,0)" stroke-width="0" x="180" y="185" font-size="12" font-family="Sans-serif" text-anchor="middle" xml:space="preserve">data node</text>
+   <text id="svg_26" fill="#000000" stroke="rgb(0,0,0)" stroke-width="0" x="181" y="31" font-size="16" font-family="Sans-serif" text-anchor="middle" xml:space="preserve">Actual data</text>
+   <g stroke="null" id="svg_39">
+    <rect x="136.875" y="81.25" fill="rgb(255,255,255)" height="22" width="40.64383" stroke="rgb(0,0,0)" id="svg_40"></rect>
+   </g>
+   <text fill="#000000" stroke-width="0" x="156.16485" y="97.25" font-size="12" font-family="Sans-serif" text-anchor="middle" xml:space="preserve" stroke="rgb(0,0,0)" id="svg_41">blk3</text>
+   <g stroke="null" id="svg_42">
+    <rect x="182.48116" y="81.25" fill="rgb(255,255,255)" height="22" width="40.64383" stroke="rgb(0,0,0)" id="svg_43"></rect>
+   </g>
+   <text fill="#000000" stroke-width="0" x="202.41485" y="97.25" font-size="12" font-family="Sans-serif" text-anchor="middle" xml:space="preserve" stroke="rgb(0,0,0)" id="svg_44">blk10</text>
+   <g stroke="null" id="svg_49">
+    <rect x="182.48116" y="115.25" fill="rgb(255,255,255)" height="22" width="40.64383" stroke="rgb(0,0,0)" id="svg_50"></rect>
+   </g>
+   <text fill="#000000" stroke-width="0" x="202.41485" y="131.25" font-size="12" font-family="Sans-serif" text-anchor="middle" xml:space="preserve" stroke="rgb(0,0,0)" id="svg_51">blk15</text>
+   <g id="svg_28" stroke="null">
+    <rect x="137.25" y="48.25" fill="rgb(255,255,255)" height="22" width="40.64383" id="svg_29" stroke="rgb(0,0,0)"></rect>
+   </g>
+   <text fill="#000000" stroke-width="0" x="156.56159" y="64.25" font-size="12" font-family="Sans-serif" text-anchor="middle" xml:space="preserve" id="svg_30" stroke="rgb(0,0,0)">blk1</text>
+   <g id="svg_34" stroke="null">
+    <rect x="182.85616" y="48.25" fill="rgb(255,255,255)" height="22" width="40.64383" id="svg_35" stroke="rgb(0,0,0)"></rect>
+   </g>
+   <text fill="#000000" stroke-width="0" x="202.00181" y="64.25" font-size="12" font-family="Sans-serif" text-anchor="middle" xml:space="preserve" id="svg_36" stroke="rgb(0,0,0)">blk2</text>
+  </g>
+  <g id="svg_54">
+   <g id="svg_55">
+    <rect x="252" y="39.5" fill="rgb(255,255,255)" stroke-width="3" stroke="rgb(0,0,0)" height="150" width="100" id="svg_56"></rect>
+   </g>
+   <text fill="#000000" stroke="rgb(0,0,0)" stroke-width="0" x="301" y="185" font-size="12" font-family="Sans-serif" text-anchor="middle" xml:space="preserve" id="svg_57">data node</text>
+   <text fill="#000000" stroke="rgb(0,0,0)" stroke-width="0" x="302" y="31" font-size="16" font-family="Sans-serif" text-anchor="middle" xml:space="preserve" id="svg_58">Actual data</text>
+   <g stroke="null" id="svg_60">
+    <rect x="258.25" y="49.25" fill="rgb(255,255,255)" height="22" width="40.64383" stroke="rgb(0,0,0)" id="svg_61"></rect>
+   </g>
+   <text fill="#000000" stroke-width="0" x="276.63406" y="64.25" font-size="12" font-family="Sans-serif" text-anchor="middle" xml:space="preserve" stroke="rgb(0,0,0)" id="svg_62">blk2</text>
+   <g stroke="null" id="svg_63">
+    <rect x="303.85616" y="49.25" fill="rgb(255,255,255)" height="22" width="40.64383" stroke="rgb(0,0,0)" id="svg_64"></rect>
+   </g>
+   <text fill="#000000" stroke-width="0" x="324.88406" y="64.25" font-size="12" font-family="Sans-serif" text-anchor="middle" xml:space="preserve" stroke="rgb(0,0,0)" id="svg_65">blk20</text>
+   <g stroke="null" id="svg_73">
+    <rect x="303.48116" y="116.25" fill="rgb(255,255,255)" height="22" width="40.64383" stroke="rgb(0,0,0)" id="svg_74"></rect>
+   </g>
+   <text fill="#000000" stroke-width="0" x="324.48732" y="131.25" font-size="12" font-family="Sans-serif" text-anchor="middle" xml:space="preserve" stroke="rgb(0,0,0)" id="svg_75">blk1</text>
+   <g id="svg_38" stroke="null">
+    <rect id="svg_45" x="258.625" y="82.875" fill="rgb(255,255,255)" height="22" width="40.64383" stroke="rgb(0,0,0)"></rect>
+   </g>
+   <text id="svg_46" fill="#000000" stroke-width="0" x="277.00906" y="97.875" font-size="12" font-family="Sans-serif" text-anchor="middle" xml:space="preserve" stroke="rgb(0,0,0)">blk10</text>
+   <g id="svg_47" stroke="null">
+    <rect id="svg_48" x="258.48116" y="116.375" fill="rgb(255,255,255)" height="22" width="40.64383" stroke="rgb(0,0,0)"></rect>
+   </g>
+   <text id="svg_52" fill="#000000" stroke-width="0" x="280.25906" y="132.125" font-size="12" font-family="Sans-serif" text-anchor="middle" xml:space="preserve" stroke="rgb(0,0,0)">blk25</text>
+  </g>
+  <rect id="svg_23" height="0" width="1" y="448" x="412.5" stroke-linecap="null" stroke-linejoin="null" stroke-dasharray="null" stroke-width="5" stroke="rgb(0,0,0)" fill="#ffffff"></rect>
+  <g id="svg_14">
+   <line id="svg_86" y2="338.75001" x2="58" y1="188.00001" x1="58" stroke-linecap="null" stroke-linejoin="null" stroke-dasharray="null" stroke-width="2" stroke="rgb(0,0,0)" fill="none"></line>
+   <line id="svg_87" y2="317.00001" x2="182" y1="188.00001" x1="182" stroke-linecap="null" stroke-linejoin="null" stroke-dasharray="null" stroke-width="2" stroke="rgb(0,0,0)" fill="none"></line>
+   <line id="svg_89" y2="338.24998" x2="219" y1="338.24998" x1="58.74997" stroke-linecap="null" stroke-linejoin="null" stroke-dasharray="null" stroke-width="2" stroke="rgb(0,0,0)" fill="none"></line>
+   <line id="svg_90" y2="316.24998" x2="219" y1="316.24998" x1="183.24998" stroke-linecap="null" stroke-linejoin="null" stroke-dasharray="null" stroke-width="2" stroke="rgb(0,0,0)" fill="none"></line>
+  </g>
+  <g id="svg_31">
+   <rect id="svg_22" height="32" width="137" y="322" x="29.5" stroke-linecap="null" stroke-linejoin="null" stroke-dasharray="null" stroke-width="0" stroke="rgb(0,0,0)" fill="#ffffff"></rect>
+   <text id="svg_76" stroke="#000000" xml:space="preserve" text-anchor="middle" font-family="Sans-serif" font-size="16" y="343.875" x="97.75" stroke-width="0" fill="#000000">get/set metadata</text>
+  </g>
+  <g id="svg_24">
+   <line id="svg_25" y2="339.75" x2="446" y1="189" x1="446" stroke-linecap="null" stroke-linejoin="null" stroke-dasharray="null" stroke-width="2" stroke="rgb(0,0,0)" fill="none"></line>
+   <line id="svg_32" y2="317" x2="321" y1="188" x1="321" stroke-linecap="null" stroke-linejoin="null" stroke-dasharray="null" stroke-width="2" stroke="rgb(0,0,0)" fill="none"></line>
+   <line id="svg_33" y2="338.875" x2="446.24998" y1="338.875" x1="288.74997" stroke-linecap="null" stroke-linejoin="null" stroke-dasharray="null" stroke-width="2" stroke="rgb(0,0,0)" fill="none"></line>
+   <line id="svg_37" y2="316.875" x2="320.99998" y1="316.875" x1="288" stroke-linecap="null" stroke-linejoin="null" stroke-dasharray="null" stroke-width="2" stroke="rgb(0,0,0)" fill="none"></line>
+  </g>
+  <g id="svg_69">
+   <g id="svg_77">
+    <rect x="389" y="40.5" fill="rgb(255,255,255)" stroke-width="3" stroke="rgb(0,0,0)" height="150" width="100" id="svg_78"></rect>
+   </g>
+   <g id="svg_71" stroke="null">
+    <rect id="svg_72" x="394.17808" y="111.125" fill="rgb(255,255,255)" height="22" width="40.64383" stroke="rgb(0,0,0)"></rect>
+   </g>
+   <g id="svg_66" stroke="null">
+    <rect id="svg_67" x="441.42809" y="49.62499" fill="rgb(255,255,255)" height="22" width="40.64383" stroke="rgb(0,0,0)"></rect>
+   </g>
+   <text fill="#000000" stroke="rgb(0,0,0)" stroke-width="0" x="437" y="185" font-size="12" font-family="Sans-serif" text-anchor="middle" xml:space="preserve" id="svg_79">data node</text>
+   <text fill="#000000" stroke="rgb(0,0,0)" stroke-width="0" x="438" y="31" font-size="16" font-family="Sans-serif" text-anchor="middle" xml:space="preserve" id="svg_80">Actual data</text>
+   <g stroke="null" id="svg_82">
+    <rect x="394.25" y="49.25" fill="rgb(255,255,255)" height="22" width="40.64383" stroke="rgb(0,0,0)" id="svg_83"></rect>
+   </g>
+   <text fill="#000000" stroke-width="0" x="414.13202" y="64.76563" font-size="12" font-family="Sans-serif" text-anchor="middle" xml:space="preserve" stroke="rgb(0,0,0)" id="svg_84">blk4</text>
+   <g stroke="null" id="svg_95">
+    <rect x="439.48116" y="111.25" fill="rgb(255,255,255)" height="22" width="40.64383" stroke="rgb(0,0,0)" id="svg_96"></rect>
+   </g>
+   <text fill="#000000" stroke-width="0" x="461.31341" y="126.5" font-size="12" font-family="Sans-serif" text-anchor="middle" xml:space="preserve" stroke="rgb(0,0,0)" id="svg_97">blk3</text>
+   <text id="svg_59" fill="#000000" stroke-width="0" x="461.74921" y="65.24999" font-size="12" font-family="Sans-serif" text-anchor="middle" xml:space="preserve" stroke="rgb(0,0,0)">blk5</text>
+   <text id="svg_68" fill="#000000" stroke-width="0" x="413.75092" y="127.36719" font-size="12" font-family="Sans-serif" text-anchor="middle" xml:space="preserve" stroke="rgb(0,0,0)">blk10</text>
+  </g>
+  <g id="svg_88">
+   <rect height="21.75" width="99.75" y="327.625" x="335.125" stroke-linecap="null" stroke-linejoin="null" stroke-dasharray="null" stroke-width="0" stroke="rgb(0,0,0)" fill="#ffffff" id="svg_91"></rect>
+   <text stroke="#000000" xml:space="preserve" text-anchor="middle" font-family="Sans-serif" font-size="16" y="342.87497" x="385.37503" stroke-width="0" fill="#000000" id="svg_93">get/set data</text>
+  </g>
+  <g id="svg_94">
+   <rect height="21.75" width="99.75" y="240.625" x="129.125" stroke-linecap="null" stroke-linejoin="null" stroke-dasharray="null" stroke-width="0" stroke="rgb(0,0,0)" fill="#ffffff" id="svg_99"></rect>
+   <text stroke="#000000" xml:space="preserve" text-anchor="middle" font-family="Sans-serif" font-size="16" y="255.87497" x="179.37503" stroke-width="0" fill="#000000" id="svg_100">get/set data</text>
+  </g>
+  <g id="svg_19">
+   <rect id="svg_92" height="21.75" width="99.75" y="240.75003" x="246.74997" stroke-linecap="null" stroke-linejoin="null" stroke-dasharray="null" stroke-width="0" stroke="rgb(0,0,0)" fill="#ffffff"></rect>
+   <text stroke="#000000" xml:space="preserve" text-anchor="middle" font-family="Sans-serif" font-size="16" id="svg_6" y="256" x="297" stroke-width="0" fill="#000000">get/set data</text>
+  </g>
+ </g>
+</g>
+</svg>

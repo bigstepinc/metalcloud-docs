@@ -22,7 +22,7 @@ The Bigstep Metalcloud is an IaaS service focused on offering low latency and hi
    general/getting_started
    general/metalcloud_instances
    general/metalcloud_pricing
- 
+   general/datalake_overview
 
 .. toctree::
    :maxdepth: 2
@@ -36,7 +36,9 @@ The Bigstep Metalcloud is an IaaS service focused on offering low latency and hi
    guides/retrieving_the_utilization_report
    guides/using_the_cli
    guides/using_the_terraform_provider
-
+   guides/using_the_datalake_command_line_tool
+   guides/managing_datalake_files_using_curl
+   guides/authenticating_to_the_datalake_using_kerberos
 
 .. toctree::
    :maxdepth: 2
