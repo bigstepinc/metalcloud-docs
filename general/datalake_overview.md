@@ -4,9 +4,9 @@ The Bigstep DataLake is a specialised file system designed for scalability and h
 
 The customer only pays for the stored data, independent of the underlying hardware.
 
-The prefered access method is the [DataLake command line tool](/guides/using_the_datalake_command_line_tool).
+The preferred access method is the [DataLake command line tool](/guides/using_the_datalake_command_line_tool).
 
-Alternatively you can also use the [WebHDFS rest interface using cURL utility](/guides/managing_datalake_files_using_curl) or  access the files programatically via our [DataLake client libraries](https://github.com/bigstepinc/datalake-client-libraries).
+Alternatively you can use the [WebHDFS rest interface using cURL utility](/guides/managing_datalake_files_using_curl) or  access the files programmatically via our [DataLake client libraries](https://github.com/bigstepinc/datalake-client-libraries).
 
 ## Architecture
 
@@ -49,7 +49,7 @@ The DataLake service is a GSS enabled WebHDFS and Kerberised HDFS compatible sto
 
 A DataLake directory can also be mounted as a regular directory in the filesystem via [FUSE](http://www.cloudera.com/content/cloudera/en/documentation/core/v5-2-x/topics/cdh_ig_hdfs_mountable.html). Please note that because the underlying filesystem is an object storage certain functions, notably random access are not supported by the FUSE connector and will fail.
 
-### Additional datalake resources
+### Additional DataLake resources
 
 * [HDFS Apache user guide](https://hadoop.apache.org/docs/current/hadoop-project-dist/hadoop-hdfs/HdfsDesign.html)
 * [Java native API](http://hadoop.apache.org/docs/current/api/)
