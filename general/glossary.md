@@ -1,4 +1,4 @@
-# Glosary
+# Glossary
 
 **Whats an Infrastructure?**
 
