@@ -45,9 +45,9 @@ This article details how primary users (billable account owners) can grant other
 
  ![](/assets/guides/user_management_7.png)
 
- If there is no user account associated with the email address, you can create one automatically by clicking on **Send invite?.**
+ If there is no user account associated with the email address, you can create one automatically by clicking on **Send invite**.
 
- **![](/assets/guides/user_management_8.png)**
+ ![](/assets/guides/user_management_8.png)
 
  An activation email has been sent to the provided email address, and once the user clicks the link in the message, he will be able to create, edit, and deploy elements on your infrastructure.
 

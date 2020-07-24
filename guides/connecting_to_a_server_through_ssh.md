@@ -3,7 +3,7 @@ As soon as the deploy of an infrastructure is completed, the servers are powered
 
  Depending on the operating system on your computer, there are multiple ways to use SSH. While Linux and MacOS systems already include a terminal, Windows users must install an emulator unless they have the Linux Bash Shell already configured. The most popular Windows terminal emulator is PuTTY, a free application that can be downloaded from [here](https://www.putty.org/).
 
- **How to connect to your server**
+ ## Locating access credentials and connecting
 
  1.In the Bigstep Infrastructure Editor, click on the Instance Array widget of the instance you want to connect to.  
   

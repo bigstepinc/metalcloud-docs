@@ -1,7 +1,7 @@
 # Adding additional IP addresses
 Additional IPv4 addresses or subnets can be added or deleted easily directly from the Bigstep infrastructure editor. In this article, we will walk you through the process.
 
- **Adding a subnet**
+ ## Adding a subnet
 
  1.Click on the **Internet** widget in your infrastructure editor.  
 ![](/assets/guides/adding_additional_ip_addresses_1.png)  
@@ -35,7 +35,7 @@ Additional IPv4 addresses or subnets can be added or deleted easily directly fro
 
  ![](/assets/guides/adding_additional_ip_addresses_9.png)
 
- **Deleting a subnet**
+ ## Deleting a subnet
 
  1.Click on the **Internet** tab of the infrastructure editor and select the subnet that you want to delete. Please note that the initial IPv4 and IPv6 subnets cant be deleted.
 
