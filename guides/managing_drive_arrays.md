@@ -11,11 +11,60 @@ There are multiple ways to create a drive array from the **Infrastructure Editor
 
 ![](/assets/guides/managing_drive_arrays1.png)
 
+ 
 ## Listing drive arrays of an instance array using the UI
 
 1. Click on on an instance array and go to the **DriveArrays** tab
 
 ![](/assets/guides/managing_drive_arrays2.png)
+
+## Adding a new drive
+
+ 1.In the Bigstep Infrastructure Editor, click on the **Infrastructure** button on the left bar and select Drive Array.  
+![](/assets/guides/drive_management_1.png)  
+2.The new Drive Array will now be visible in the interface.  
+![](/assets/guides/drive_management_2.png)  
+3. Click on the new Drive Array, in order to customize it. You can tweak the size, storage type, operating system template, file system and block size, as well as attach it to an existing Instance Array or Container Array. You can also attach it to an array by simply dragging and dropping it in the interface.  
+  
+![](/assets/guides/drive_management_3.png)  
+4. An alternative way to create a Drive Array is from the Instance Array overview, in the **DriveArrays** tab. Click on **Create DriveArray** and a new one will be attached to the server, with default settings. You can customize the Drive Array by clicking on its icon in the interface.  
+  
+![](/assets/guides/drive_management_4.png)  
+5.After configuring and attaching the drive, click on **Deploy Changes** in order to make it active.  
+![](/assets/guides/drive_management_5.png)  
+  
+6.The new disk will be attached to your server after the deploy. A server reboot might be needed, as well as additional configuration from your operating system, before it can be used.  
+  
+ ## Removing a drive
+
+ 1.In order to delete an existing Drive Array, click on its icon in the infrastructure editor.  
+![](/assets/guides/drive_management_6.png)  
+2.Click on **Delete DriveArray**.  
+![](/assets/guides/drive_management_7.png)  
+3.Confirm that you want to delete the drive.  
+![](/assets/guides/drive_management_8.png)  
+4.Click on **Deploy Changes** in the infrastructure editor.
+
+ 5.As a safety measure, you will be warned about data loss. In order to confirm your option, manually type *destroydata* before the actual deploy starts.  
+![](/assets/guides/drive_management_9.png)  
+6.The drive will be deleted at the end of the deploy.
+
+ ## Expanding disk size
+
+ 1.From the infrastructure editor, click on the DriveArray you want to change the Drive size of. This opens the DriveArray overview panel.  
+![](/assets/guides/drive_management_10.png)
+
+ 2.Drag the **Default drive size** slider in order to increase its capacity, or simply type the desired size in GB. It is not possible to reduce the size of a drive, since this is a very risky operation on most operating systems.  
+![](/assets/guides/drive_management_11.png)  
+  
+3.Click on **Save**, then on **Deploy changes**.
+
+ 4.Resizing a disk requires that the server is powered off. If any affected servers in the infrastructure are still powered on, you will be prompted to **Hard power off** or **Soft power off** them before the deploy. We recommend the **Soft power off** option.  
+![](/assets/guides/drive_management_12.png)
+
+ 5.The resized disk will be available after the deploy. Depending on the operating system on your server, additional configuration might be required.
+
+
 
 ## Creating a drive array using the CLI
 

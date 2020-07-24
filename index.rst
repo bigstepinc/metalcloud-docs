@@ -23,27 +23,36 @@ The Bigstep Metalcloud is an IaaS service focused on offering low latency and hi
    general/metalcloud_instances
    general/metalcloud_pricing
    general/datalake_overview
+   general/glossary
 
 .. toctree::
    :maxdepth: 2
    :caption: Guides:
    
+   guides/connecting_to_a_server_through_ssh
+   guides/connecting_to_windows_servers_through_rdp
+   guides/using_the_infrastructure_firewall
    guides/managing_infrastructures
    guides/managing_instance_arrays
    guides/managing_drive_arrays
+   guides/managing_drive_snapshots
    guides/managing_billing_information
    guides/managing_users_and_permissions
+   
    guides/retrieving_the_utilization_report
    guides/using_the_cli
    guides/using_the_terraform_provider
    guides/using_the_datalake_command_line_tool
    guides/managing_datalake_files_using_curl
    guides/authenticating_to_the_datalake_using_kerberos
+   
+   
 
 .. toctree::
    :maxdepth: 2
    :caption: Advanced:
 
+   advanced/adding_additional_ip_addresses
    advanced/creating_an_iscsi_os_template
    advanced/creating_a_local_install_os_template
    advanced/manually_managing_iscsi_connections
