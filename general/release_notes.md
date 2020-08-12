@@ -6,7 +6,7 @@ This is a minor release that was focused on bug fixes and to add basic variable 
 1. **UI Improvements**
    We fixed a range of bugs in the Servers page, Storages page, Storage Templates page, Variables pages, Workflow page 
 	and a few more other bugs in the Multi-server enclosures pages. 
-2. **Metalcoud CLI **
+2. **Metalcoud CLI**
    We added variables to OS assets and missing shared drive functions. 
    Support for subnets and switches is now possible from the CLI. Also the CLI now has updated yaml format configuration for all commands.
 3. **Monitoring agent updates**
