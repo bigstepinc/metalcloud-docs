@@ -19,6 +19,7 @@ better monitoring capabilities and more exact SFLOW measurements.
 
    We continued the work on the switch provisioning from the previous release.We improved the switch provisioning layer to always use the caching layer, that would provide improved speed in switch provisioning operations. We also removed reconnects for HP switches which improves deploy time.
    
+   
  5.**OS Template API improvement**
  
    The OS template API has now the ability to use variables for templates.
