@@ -1,5 +1,29 @@
 # Release notes
 
+### R4.5 - 12 August 2020
+This is a minor release that was focused on bug fixes and to add basic variable support. Here are the highlights:
+
+1. **UI Improvements**
+
+   We fixed a range of bugs in the Servers page, Storages page, Storage Templates page, Variables pages, Workflow page 
+	and a few more other bugs in the Multi-server enclosures pages. 
+2. **Metalcoud CLI**
+
+   We added variables to OS assets and missing shared drive functions. 
+   Support for subnets and switches is now possible from the CLI. Also the CLI now has updated yaml format configuration for all commands.
+3. **Monitoring agent updates**
+
+   The new improved monitoring agent will be released, with enhancements for data measurements and SNMP pooling. The new implementation allows
+better monitoring capabilities and more exact SFLOW measurements.
+4. **Switch provisioning**
+
+   We continued the work on the switch provisioning from the previous release.We improved the switch provisioning layer to always use the caching layer, that would provide improved speed in switch provisioning operations. We also removed reconnects for HP switches which improves deploy time.
+   
+5. **OS Template API improvement**
+ 
+   The OS template API has now the ability to use variables for templates.
+
+
 ### R4.4 - 9 July 2020
 This is a minor release that was focused on improving deploy speed and fix bugs. Here are the highlights:
 
