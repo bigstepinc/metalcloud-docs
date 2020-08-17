@@ -37,7 +37,7 @@ In the MetalCloud servers (called **Instances**) are groupped in **InstanceArray
 
 4. **Deploy the infrastructure**
 
-    Operations in the Metal Cloud are not immediatelly deployed. In fact they can be reverted until the infrastructure is "Deployed".
+    Operations in the Metal Cloud are not immediately deployed. In fact they can be reverted until the infrastructure is "Deployed".
     Click on the big "Deploy" button from the bottom of the screen.
     ![](/assets/guides/getting_started61.png)
 
