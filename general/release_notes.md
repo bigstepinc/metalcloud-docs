@@ -17,6 +17,7 @@ This is a minor release that was focused on adding new switch drivers and to imp
    A new monitoring tab with information about server monitoring data is displayed. The new monitoring page pulls data from 
    the monitoring agent and displays aggregated graphs for multiple metrics. We now have graphs for disk space, traffic per interface, 
    memory temperature, power supply temperature, system temperature. 
+   
 
 4. **Independent instance support**
 
@@ -28,6 +29,7 @@ This is a minor release that was focused on adding new switch drivers and to imp
    We added a whitelist support feature to enable matching templates to server types configuration. This would enable fine control 
    over what template is supported on what server type.
    
+   
 6. **Switch provision improvements**
 	
    We improved the VPLS switch provision to provide better deploy time.
@@ -37,6 +39,7 @@ This is a minor release that was focused on adding new switch drivers and to imp
    The navigation system for the new admin UI was changed to update the sidbar. This eliminated subpages and organized the content. 
    Also there are new tabs in Server list page that allows for easy acces to Server related conceps. Similar tab based reorganization 
    was implemented in the Templates page and Variables and Secrets section.
+   
    
 8. **Enhanced Supermicro Redfish support**
   
