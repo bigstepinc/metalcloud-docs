@@ -3,49 +3,25 @@
 ### R4.6 - 26 October 2020
 This is a minor release that was focused on adding new switch drivers and to improve the admin UI. Here are the highlights:
 
-1. **New Cumulus Switch support**
+1. **Various bug fixes and stability improvements**
 
-   We added a new driver for Cumulus switches and included the new driver in the VLAN backend. The system is functional 
-   in a new deployment and we will continue to improve the support for Cumulus.
-   
-2. **User Section**  
-   
-   We added a new Users section in the new admin UI to provide detailed information about users and access levels. 
-   
-3. **Monitoring tab**
-  
-   A new monitoring tab with information about server monitoring data is displayed. The new monitoring page pulls data from 
-   the monitoring agent and displays aggregated graphs for multiple metrics. We now have graphs for disk space, traffic per interface, 
-   memory temperature, power supply temperature, system temperature. 
-   
+   We have added numerous minor bug fixes and stability improvements.
 
-4. **Independent instance support**
+1. **Independent instances improvements**
 
-   The support for independent instance was improved to minimise deploy time and the ability to use a secondary drive was added.
+   The support for independent instance was improved to minimize deploy time and the ability to use a secondary drive was added.
    
-   
-5. **Template whitelist support**
+2. **Template whitelist support**
 
    We added a whitelist support feature to enable matching templates to server types configuration. This would enable fine control 
    over what template is supported on what server type.
-   
-   
-6. **Switch provision improvements**
-	
-   We improved the VPLS switch provision to provide better deploy time.
-   
-7. **Navigation system improvements**
 
-   The navigation system for the new admin UI was changed to update the sidbar. This eliminated subpages and organized the content. 
-   Also there are new tabs in Server list page that allows for easy acces to Server related conceps. Similar tab based reorganization 
-   was implemented in the Templates page and Variables and Secrets section.
-   
-   
-8. **Enhanced Supermicro Redfish support**
-  
-   We enhanced the existing Supermicro Redfish support with RAID support and firmware update. 
+   New templates will be released only for certain types of servers.
 
+3. **Homepage updates**
    
+   The homepage has been updated to make it easier to spot the infrastructure editor link. It also includes documentation links towards the CLI and the Terraform provider.
+
 
 ### R4.5 - 12 August 2020
 This is a minor release that was focused on bug fixes and to add basic variable support. Here are the highlights:
