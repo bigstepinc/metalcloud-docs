@@ -1,4 +1,4 @@
-# Managing Drive Snapshots
+# Managing drive snapshots
 
 You can create snapshots of your drives at any time and revert then when needed, with just a few clicks from the Bigstep infrastructure editor.
 
