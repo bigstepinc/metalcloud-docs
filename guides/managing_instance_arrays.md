@@ -105,8 +105,6 @@ To retrive your ssh credentials use the following command:
 $ metalcloud-cli instance-array get -id gold -show-credentials
 ```
 
-## 
-
 ## Checking the power status of all the instances in this instance array using the CLI
 
 To retrieve your instances status use:
