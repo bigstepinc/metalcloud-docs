@@ -1,4 +1,5 @@
 # Delegating access to an infrastructure
+
 This article details how primary users (billable account owners) can grant other users administrative privileges over their infrastructures or revoke them.
 
  This can be done on an infrastructure by infrastructure basis or as a global action, delegating a user with administrative access over all already existing infrastructures, as well as all infrastructures that will be created in the future.
