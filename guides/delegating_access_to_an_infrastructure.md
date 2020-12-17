@@ -59,3 +59,4 @@ This article details how primary users (billable account owners) can grant other
  ![](/assets/guides/user_management_9.png)
 
 See [Managing users and permissions](/guides/managing_users_and_permissions) for more details.
+
