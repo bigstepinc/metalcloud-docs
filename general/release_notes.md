@@ -1,5 +1,40 @@
 # Release notes
 
+### R4.8 - 25 August 2020
+This is a minor release that was focused on adding iSCSI templates support and to improve the admin UI. Here are the highlights:
+
+1. **Various bug fixes and stability improvements**
+
+   We have added numerous minor bug fixes and stability improvements for CLI and admin UI.
+
+2. **iSCSI template support**
+
+   The support for iSCSI templates was improved and new oneliner scripts are available to create or update templates. This will improve the time it takes 
+   to create new custom templates and to update the existing ones.
+   
+   
+3. **Improved deployment graph**
+	
+   The new improved deployment graph loads faster for big deployments and has new parameters 
+   that allows to distiguish between tasks executed by the same function.
+   
+
+4. **New metadata support**  
+
+   Servers now support metadata information about location and inventory id. 
+  
+5. **HP Cartrdge improved support**
+   
+   Supporting HP Cartidges is improved in the backend and in the UI.
+   
+6. **Support for Debian templates**   
+ 
+   Debian templates are supported now , starting with Jessie.
+    
+7. **Check for minimum BMC version**
+    
+    Checks for minimum BMC versions supported are in effect now. 
+    
 ### R4.6 - 26 October 2020
 This is a minor release that was focused on adding new switch drivers and to improve the admin UI. Here are the highlights:
 
