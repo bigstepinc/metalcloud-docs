@@ -29,11 +29,11 @@ This is a minor release that was focused on adding iSCSI templates support and t
    
 6. **Support for Debian templates**   
  
-   Debian templates are supported now , starting with Jessie.
+   Debian templates are supported, we support templates starting with DebianJessie.
     
 7. **Check for minimum BMC version**
     
-    Checks for minimum BMC versions supported are in effect now. 
+    Checks for minimum BMC versions supported are in effect starting with this release. 
     
 ### R4.6 - 26 October 2020
 This is a minor release that was focused on adding new switch drivers and to improve the admin UI. Here are the highlights:
