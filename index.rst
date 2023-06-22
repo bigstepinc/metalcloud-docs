@@ -47,6 +47,7 @@ The Bigstep Metalcloud is an IaaS service focused on offering low latency and hi
    guides/using_the_datalake_command_line_tool
    guides/managing_datalake_files_using_curl
    guides/authenticating_to_the_datalake_using_kerberos
+   guides/configure_okta_for_saml_authentication
    
    
 
